@@ -94,5 +94,7 @@
   </Settings>
   <VirtualDirectory Name="src">
     <File Name="main.cpp"/>
+    <File Name="Ferrari.h"/>
+    <File Name="Ferrari.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
