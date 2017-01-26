@@ -6,6 +6,14 @@ class Ferrari
 public:
     Ferrari();
     ~Ferrari();
+    
+    void mostrarVelocidade();
+    void ligarCarro();
+    
+private:
+
+    int velocidade;
+    bool ligado;
 
 };
 
