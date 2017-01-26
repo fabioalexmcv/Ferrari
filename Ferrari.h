@@ -19,6 +19,10 @@ private:
     int idFer;
     string cor;
     
+    static int numeroFerraris;
+    
+    const static double VelocidadeMaxima = 300;
+    
 };
 
 #endif // FERRARI_H

@@ -2,11 +2,18 @@
 #include <iostream>
 using std::cout;
 
+int Ferrari::numeroFerraris = 0;            //Static
+
+const double Ferrari::VelocidadeMaxima = 300;           //Const e static
+
 Ferrari::Ferrari(){         //Construtor
     this->ligado = true;
-    this->velocidade = 120;
+    this->velocidade = 0;
     this->idFer = 0;
     this->cor = "desconhecido";
+    
+    numeroFerraris++;
+    
 }
 
 Ferrari::Ferrari(const Ferrari &p){         //Construtor de cópia
@@ -44,6 +51,6 @@ void Ferrari::mostrarVelocidade(){
 
 void Ferrari::ligarCarro(){
     
-    cout << "Ligar o carro?" << ligado << '\n';
+    cout << "Status: " << ligado << '\n';
 }
 
