@@ -6,7 +6,7 @@ int Ferrari::numeroFerraris = 0;            //Static
 
 const double Ferrari::VelocidadeMaxima = 300;           //Const e static
 
-Ferrari::Ferrari(){         //Construtor
+Ferrari::Ferrari(){                         //Construtor
     this->ligado = true;
     this->velocidade = 0;
     this->idFer = 0;
@@ -36,7 +36,7 @@ Ferrari::Ferrari(const string &cor, int velocidade, int idFer, bool ligado){
     this->cor = cor;
 }
 
-Ferrari::~Ferrari(){            //Destrutor
+Ferrari::~Ferrari(){                        //Destrutor
     
 }
 
@@ -64,17 +64,28 @@ void Ferrari::mostraId() const{         //Array
     cout << '\n';
 }
 
-int Data::checarDia(int dia) const{
-    static const int diasPorMes[13]= {0,31,28,31,30,30,31,31,30,31,30,31};
-    if (dia>0 && dia<=diasPorMes[mes])
-        return dia;
-        
-    if (mes==2 && dia==29 && (ano % 400==0 || (ano % 4==0 && ano % 100!=0)))
-        return dia;
-        
-    cout << "Dia inválido.\n";
+/*void Ferrari::cadastrarUsuario(const string &usuario, const int index){
+    if (index >= 0 && index < quantUsuarios)
+        usuarioNomes[index] = usuario;
+    else
+        cout << "Erro!\n";
+}*/
+
+void Ferrari::addSoftware(const string &software){
     
-    return 1;
+    string *aux = new string[quantSoftwares];
+    
+    for (int i = 0; i < quantSoftwares; i++)
+        aux[i] = SoftwareNomes[i];
+        
+    delete [] SoftwareNomes;
+    
+    SoftwaresNomes = new string[++quantSoftwares];
+    
+    for (int i = 0; i < quantSoftwares-1; i++)
+        SoftwareNomes[quantSoftwares-1] = software;
+        
+    delete [] aux;
 }
 
  

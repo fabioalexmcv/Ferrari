@@ -1,37 +1,41 @@
 #ifndef FERRARI_H
 #define FERRARI_H
-#ifndef DATA_H_
-#define DATA_H_
-
-class Data{
-public:
-    Data(int=1, int=1, int=1900);
-    void print() const;
-    ~Data();
-    
-private:
-    int checarDia(int) const;
-    int dia;
-    int mes;
-    int ano;
-}
 
 class Ferrari{
+    
 public:
+
     Ferrari();
+    
     ~Ferrari();
+    
     Ferrari(const Ferrari &);
+    
     Ferrari(const string &, int velocidade, int idFer, bool ligado);
+    
     void mostrarVelocidade();
+    
     void ligarCarro();
+    
     void mensagem() const;
+    
+    //void cadastrarUsuario(const string &, const int);
+    
+    void addSoftware(const string &);
+    
+    void listarUsuarios() const;
     
 private:
 
     bool ligado;
+    
     int velocidade;
+    
     int idFer;
+    
     string cor;
+    
+    string software;
     
     static int numeroFerraris;
     
