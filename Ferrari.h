@@ -25,6 +25,10 @@ public:
     
     void listarUsuarios() const;
     
+    friend ostream &operator << (ostream &, const Ferrari &);        //Sobrecarga de operadores <<
+    
+    const Ferrari &operator = (const Ferrari &);         //Sobrecarga de operadores =
+    
 private:
 
     bool ligado;

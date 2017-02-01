@@ -1,6 +1,8 @@
 #include "Ferrari.h"
 #include <iostream>
+#include <ostream>
 using std::cout;
+using std::ostream;
 
 int Ferrari::numeroFerraris = 0;            //Static
 
@@ -36,6 +38,21 @@ Ferrari::Ferrari(const string &cor, int velocidade, int idFer, bool ligado){
 }
 
 Ferrari::~Ferrari(){                        //Destrutor
+    
+}
+
+ostream &operator << (ostream &output, const Ferrari &carro){       //sobrecarga de operadores <<
+    output << "Velocidade: " << carro.velocidade << " | Id: " << idFer << " | Cor: " << cor << '\n';
+}
+
+const Ferrari &operator = (const Ferrari &carro){       //sobrecarga de operadores =
+    this->ligado = carro.ligado;
+    this->velocidade = carro.velocidade;
+    this->idFer = carro.idFer;
+    this->cor = carro.cor;
+    this->software = carro.software;
+    
+    return *this;
     
 }
 
@@ -86,5 +103,3 @@ void Ferrari::addSoftware(const string &software){
         
     delete [] aux;
 }
-
- 
