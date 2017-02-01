@@ -22,6 +22,15 @@ int main(int argc, char **argv){
 }
 
 /*Lista de requisitos
+1 nova classe relacionada ao seu projeto
+2 alocações dinâmicas de memória - uma similar ao do exemplo do livro - slide 85
+Uso explicito do ponteiro this
+Uso do destrutor
+Sobrecarga dos operadores
+= (atribuição)
+==
+~=
+
 3 construtores - incluindo um de cópia
 2 métodos - não pode ser get ou set
 1 método extra que precisa ser const

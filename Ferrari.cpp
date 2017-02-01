@@ -13,7 +13,6 @@ Ferrari::Ferrari(){                         //Construtor
     this->cor = "desconhecido";
     
     numeroFerraris++;
-    
 }
 
 Ferrari::Ferrari(const Ferrari &p){         //Construtor de cópia
