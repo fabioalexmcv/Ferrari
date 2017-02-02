@@ -1,23 +1,21 @@
 #ifndef DATA_H
 #define DATA_H
 
-class Data
-{
+class Data{
+	
 public:
-    Data(int=1, int=1, int=1);
-    
-    void print() const;
-    
+
+	Data();
+    Data(int=1, int=1, int=1900);
+	Data(const Data &);
     ~Data();
-    
+    void print() const;
+	
 private:
-    
+
     int checarDia(int) const;
-    
     int dia;
-    
     int mes;
-    
     int ano;
 
 };

@@ -1,30 +1,37 @@
 #include "Ferrari.h"
+#include "Data.h"
+#include "Data.cpp"
 #include <iostream>
-#include <ostream>
+#include <string>
 using std::cout;
-using std::ostream;
+using std::iostream;
+using std::string;
 
-int Ferrari::numeroFerraris = 0;            //Static
-
-const double Ferrari::VelocidadeMaxima = 300;           //Const e static
+int Ferrari::numeroFerraris = 0;            		//Static
+const int Ferrari::VelocidadeMaxima = 300;          //Const e static
 
 Ferrari::Ferrari(){                         //Construtor
     this->ligado = true;
     this->velocidade = 0;
     this->idFer = 0;
-    this->cor = "desconhecido";
+    this->cor = "";
+	this->software = "";
     
     numeroFerraris++;
 }
 
 Ferrari::Ferrari(const Ferrari &p){         //Construtor de cópia
-    ligado = p.ligado;
-    velocidade = p.velocidade;
-    idFer = p.idFer;
-    cor = p.cor;
+    this->ligado = p.ligado;
+    this->velocidade = p.velocidade;
+    this->idFer = p.idFer;
+    this->cor = p.cor;
+	
+	return *this;
+	
+	numeroFerraris++;
 }
 
-Ferrari::Ferrari(const string &cor, int velocidade, int idFer, bool ligado){
+Ferrari::Ferrari(const string &cor, const string &software, int &velocidade, int &idFer, bool &ligado){
     this->ligado = ligado;
     
     if (velocidade >= 0)
@@ -35,10 +42,19 @@ Ferrari::Ferrari(const string &cor, int velocidade, int idFer, bool ligado){
     this->idFer = idFer;
     
     this->cor = cor;
+	
+	this->software = software;
+	
+	numeroFerraris++;
 }
 
 Ferrari::~Ferrari(){                        //Destrutor
-    
+    delete [] velocidade;
+	delete [] idFer;
+	delete [] cor;
+	delete [] software;
+	
+	numeroFerraris--;
 }
 
 ostream &operator << (ostream &output, const Ferrari &carro){       //sobrecarga de operadores <<
@@ -53,7 +69,6 @@ const Ferrari &operator = (const Ferrari &carro){       //sobrecarga de operador
     this->software = carro.software;
     
     return *this;
-    
 }
 
 Ferrari::mensagem() const{
