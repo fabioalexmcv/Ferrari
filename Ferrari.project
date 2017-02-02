@@ -96,5 +96,9 @@
     <File Name="main.cpp"/>
     <File Name="Ferrari.h"/>
     <File Name="Ferrari.cpp"/>
+    <File Name="Data.h"/>
+    <File Name="Data.cpp"/>
+    <File Name="Motor.h"/>
+    <File Name="Motor.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
