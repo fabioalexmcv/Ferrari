@@ -7,29 +7,28 @@
 #include "Data.cpp"
 #include "Motor.h"
 #include "Motor.cpp"
+//#pragma once
 using std::cout;
 using std::string;
 using std::string;
 
-int main(int velocidade, const string mensagem, const string cor){
+int main(int velocidade, const string &mensagem, const string &cor){
     
-    Ferrari carro1, carro2(120,1023,"vermelha"), carro3(carro2);
+    Ferrari carro1, carro3(carro1);
     
     carro1.mostrarVelocidade();         //Mostra só a velocidade do carro1
-    carro1.cor();                       //Informa a cor do carro1
     carro1.mensagem();                  //Dá informações completas do carro1
-    carro2.mensagem();                  //Dá informações completas do carro2
     carro3.mensagem();                  //Dá informações completas do carro3
     
-    const Ferrari carro4(200,1030,"preta");
+    const Ferrari carro4("preta", "FTX4.1", 260, {3}, true);
     
-	cout << "Número de ferraris: " << carro4.getNumeroFerraris() << '\n';
+	cout << "Número de ferraris: " << Ferrari::n << '\n';
     
 	//Usando a sobrecarga de operadores
     Ferrari veiculo;
     
     cout << "Esse veículo tem velocidade, id e cor, respectivamente:\n";
-    cout << carro << '\n';
+    cout << carro1 << '\n';
     
     return 0;
 }

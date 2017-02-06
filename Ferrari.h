@@ -1,5 +1,10 @@
 #ifndef FERRARI_H
 #define FERRARI_H
+#include <string>
+#include <ostream>
+#include "Motor.h"
+using std::string;
+using std::ostream;
 
 class Ferrari{
     
@@ -27,12 +32,16 @@ private:
     bool ligado;
     int velocidade;
     int idFer;
+    int quantSoftwares;
     string cor;
     string software;
-    static int numeroFerraris;
-    const static int VelocidadeMaxima = 300;
+    string *SoftwareNomes;
+    static int n;
+    const static int VelocidadeMaxima;
     const static int sizeId = 10;
     int id[sizeId];
+    
+    Motor *motor;
     
 };
 

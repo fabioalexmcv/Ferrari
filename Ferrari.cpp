@@ -9,7 +9,7 @@ using std::cout;
 using std::iostream;
 using std::string;
 
-int Ferrari::numeroFerraris = 0;            		//Static
+int Ferrari::n = 0;            		//Static
 const int Ferrari::VelocidadeMaxima = 300;          //Const e static
 
 Ferrari::Ferrari(){                         //Construtor
@@ -19,7 +19,7 @@ Ferrari::Ferrari(){                         //Construtor
     this->cor = "";
 	this->software = "";
     
-    numeroFerraris++;
+    n++;
 }
 
 Ferrari::Ferrari(const Ferrari &p){         //Construtor de cópia
@@ -28,42 +28,34 @@ Ferrari::Ferrari(const Ferrari &p){         //Construtor de cópia
     this->idFer = p.idFer;
     this->cor = p.cor;
 	
-	return *this;
-	
-	numeroFerraris++;
+	n++;
 }
 
-Ferrari::Ferrari(const string &cor, const string &software, int &velocidade, int &idFer, bool &ligado){
+Ferrari::Ferrari(const string &, const string &, int, int, bool){
     this->ligado = ligado;
+    this->idFer = idFer;
+    this->cor = cor;
     
+	this->software = software;
     if (velocidade >= 0)
         this->velocidade = velocidade;
     else
         this->velocidade = 0;
     
-    this->idFer = idFer;
-    
-    this->cor = cor;
-	
-	this->software = software;
-	
-	numeroFerraris++;
+	n++;
 }
 
 Ferrari::~Ferrari(){                        //Destrutor
-    delete [] velocidade;
-	delete [] idFer;
-	delete [] cor;
-	delete [] software;
+    delete [] motor;
 	
-	numeroFerraris--;
+	n--;
 }
 
 ostream &operator << (ostream &output, const Ferrari &carro){       //sobrecarga de operadores <<
-    output << "Velocidade: " << carro.velocidade << " | Id: " << idFer << " | Cor: " << cor << '\n';
+    output << "Velocidade: " << carro.velocidade << " | Id: " << carro.idFer << " | Cor: " << carro.cor << '\n';
 }
 
-const Ferrari &operator = (const Ferrari &carro){       //sobrecarga de operadores =
+const Ferrari &Ferrari::operator = (const Ferrari &carro){       //sobrecarga de operadores =
     this->ligado = carro.ligado;
     this->velocidade = carro.velocidade;
     this->idFer = carro.idFer;
@@ -73,7 +65,7 @@ const Ferrari &operator = (const Ferrari &carro){       //sobrecarga de operador
     return *this;
 }
 
-Ferrari::mensagem() const{
+void Ferrari::mensagem() const{
     cout << "Minha ferrari está a " << velocidade << "km/h, seu id é " << idFer << "e sua cor é " << cor << '\n';
 }
 
@@ -85,7 +77,7 @@ void Ferrari::ligarCarro(){
     cout << "Status: " << ligado << '\n';
 }
 
-void Ferrari::mostraId() const{         //Array
+void Ferrari::mostraId(){         //Array
     for (int i=0; i<sizeId; i++)
         cout << id[i] << '\t';
         
@@ -108,7 +100,7 @@ void Ferrari::addSoftware(const string &software){
         
     delete [] SoftwareNomes;
     
-    SoftwaresNomes = new string[++quantSoftwares];
+    SoftwareNomes = new string[++quantSoftwares];
     
     for (int i = 0; i < quantSoftwares-1; i++)
         SoftwareNomes[quantSoftwares-1] = software;

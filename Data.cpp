@@ -1,4 +1,7 @@
+#include <iostream>
 #include "Data.h"
+#pragma once
+using std::cout;
 
 Data::Data(){
 	this->dia = 1; 
@@ -6,7 +9,7 @@ Data::Data(){
     this->ano = 1900;
 }
 
-Data(const Data &copia){
+Data::Data (const Data &copia){
 	this->dia = copia.dia;
     this->mes = copia.mes;
     this->ano = copia.ano;
