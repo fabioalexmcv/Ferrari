@@ -6,7 +6,7 @@ class Motor
 public:
     Motor();
     ~Motor();
-    void mostrarPotencia();
+    void mostrarPotencia() const;
     
 private:
     float potencia;

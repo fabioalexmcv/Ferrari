@@ -1,6 +1,8 @@
 #include "Ferrari.h"
 #include "Data.h"
 #include "Data.cpp"
+#include "Motor.h"
+#include "Motor.cpp"
 #include <iostream>
 #include <string>
 using std::cout;
@@ -82,11 +84,6 @@ void Ferrari::mostrarVelocidade(){
 void Ferrari::ligarCarro(){
     cout << "Status: " << ligado << '\n';
 }
-
-/*void Ferrari::initId(){
-    for (int i=0; i<sizeId; i++)
-        id[i]=o;
-}*/
 
 void Ferrari::mostraId() const{         //Array
     for (int i=0; i<sizeId; i++)

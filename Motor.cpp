@@ -11,5 +11,6 @@ Motor::mostrarPotencia(){
 }
 
 Motor::~Motor(){
+	delete [] potencia;
 }
 

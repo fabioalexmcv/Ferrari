@@ -7,14 +7,15 @@ public:
 
     Ferrari();
     Ferrari(const Ferrari &);
-    Ferrari(const string &, int velocidade, int idFer, bool ligado);
+    Ferrari(const string &, const string &, int, int, bool);
     ~Ferrari();
 	
     void mostrarVelocidade();
+	void mostraId();
     void ligarCarro();
     void mensagem() const;
     void addSoftware(const string &);
-    void listarUsuarios() const;
+    //void listarUsuarios() const;
     //void cadastrarUsuario(const string &, const int);
 	
 	friend ostream &operator << (ostream &, const Ferrari &);        //Sobrecarga de operadores <<
