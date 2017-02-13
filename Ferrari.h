@@ -35,8 +35,8 @@ private:
     int quantSoftwares;
     string cor;
     string software;
-    string *SoftwareNomes;
-    static int n;
+    string *softwareNomes;
+    static int numeroFerraris;
     const static int VelocidadeMaxima;
     const static int sizeId = 10;
     int id[sizeId];

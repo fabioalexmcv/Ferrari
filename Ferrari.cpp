@@ -9,7 +9,7 @@ using std::cout;
 using std::iostream;
 using std::string;
 
-int Ferrari::n = 0;            		//Static
+int Ferrari::numeroFerraris = 0;            		//Static
 const int Ferrari::VelocidadeMaxima = 300;          //Const e static
 
 Ferrari::Ferrari(){                         //Construtor
@@ -19,7 +19,7 @@ Ferrari::Ferrari(){                         //Construtor
     this->cor = "";
 	this->software = "";
     
-    n++;
+    numeroFerraris++;
 }
 
 Ferrari::Ferrari(const Ferrari &p){         //Construtor de cópia
@@ -28,7 +28,7 @@ Ferrari::Ferrari(const Ferrari &p){         //Construtor de cópia
     this->idFer = p.idFer;
     this->cor = p.cor;
 	
-	n++;
+	numeroFerraris++;
 }
 
 Ferrari::Ferrari(const string &, const string &, int, int, bool){
@@ -42,13 +42,14 @@ Ferrari::Ferrari(const string &, const string &, int, int, bool){
     else
         this->velocidade = 0;
     
-	n++;
+	numeroFerraris++;
 }
 
 Ferrari::~Ferrari(){                        //Destrutor
     delete [] motor;
+	delete [] softwareNomes;
 	
-	n--;
+	numeroFerraris--;
 }
 
 ostream &operator << (ostream &output, const Ferrari &carro){       //sobrecarga de operadores <<
@@ -61,6 +62,7 @@ const Ferrari &Ferrari::operator = (const Ferrari &carro){       //sobrecarga de
     this->idFer = carro.idFer;
     this->cor = carro.cor;
     this->software = carro.software;
+	this->softwareNomes = carro.softwareNomes;
     
     return *this;
 }
@@ -96,14 +98,14 @@ void Ferrari::addSoftware(const string &software){
     string *aux = new string[quantSoftwares];
     
     for (int i = 0; i < quantSoftwares; i++)
-        aux[i] = SoftwareNomes[i];
+        aux[i] = softwareNomes[i];
         
-    delete [] SoftwareNomes;
+    delete [] softwareNomes;
     
-    SoftwareNomes = new string[++quantSoftwares];
+    softwareNomes = new string[++quantSoftwares];
     
     for (int i = 0; i < quantSoftwares-1; i++)
-        SoftwareNomes[quantSoftwares-1] = software;
+        softwareNomes[quantSoftwares-1] = software;
         
     delete [] aux;
 }
