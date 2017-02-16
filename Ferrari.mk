@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Fabio
-Date                   :=13/02/2017
+Date                   :=16/02/2017
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=clang++
 SharedObjectLinkerName :=clang++ -shared -fPIC
@@ -62,7 +62,7 @@ AS       := llvm-as
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ferrari.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Motor.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ferrari.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Motor.cpp$(ObjectSuffix) $(IntermediateDirectory)/Carro.cpp$(ObjectSuffix) $(IntermediateDirectory)/Veiculo.cpp$(ObjectSuffix) 
 
 
 
@@ -112,6 +112,16 @@ $(IntermediateDirectory)/Motor.cpp$(ObjectSuffix): Motor.cpp
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Fabio/Documents/ProgII/Ferrari/Motor.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Motor.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Motor.cpp$(PreprocessSuffix): Motor.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Motor.cpp$(PreprocessSuffix) Motor.cpp
+
+$(IntermediateDirectory)/Carro.cpp$(ObjectSuffix): Carro.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Fabio/Documents/ProgII/Ferrari/Carro.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Carro.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Carro.cpp$(PreprocessSuffix): Carro.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Carro.cpp$(PreprocessSuffix) Carro.cpp
+
+$(IntermediateDirectory)/Veiculo.cpp$(ObjectSuffix): Veiculo.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Fabio/Documents/ProgII/Ferrari/Veiculo.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Veiculo.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Veiculo.cpp$(PreprocessSuffix): Veiculo.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Veiculo.cpp$(PreprocessSuffix) Veiculo.cpp
 
 ##
 ## Clean

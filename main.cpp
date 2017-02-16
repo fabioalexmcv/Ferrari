@@ -7,9 +7,10 @@
 #include "Data.cpp"
 #include "Motor.h"
 #include "Motor.cpp"
+#include "Carro.h"
+#include "Carro.cpp"
 //#pragma once
 using std::cout;
-using std::string;
 using std::string;
 
 int main(int velocidade, const string &mensagem, const string &cor){

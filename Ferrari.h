@@ -2,24 +2,29 @@
 #define FERRARI_H
 #include <string>
 #include <ostream>
+#include "Data.h"
+#include "Data.cpp"
 #include "Motor.h"
+#include "Motor.cpp"
+#include "Carro.h"
+#include "Carro.cpp"
+#include "Veiculo.h"
+#include "Veiculo.cpp"
 using std::string;
 using std::ostream;
 
-class Ferrari{
+class Ferrari : public Carro{
     
 public:
 
     Ferrari();
     Ferrari(const Ferrari &);
-    Ferrari(const string &, const string &, int, int, bool);
+    Ferrari(int, int, const string &);
     ~Ferrari();
 	
-    void mostrarVelocidade();
-	void mostraId();
-    void ligarCarro();
-    void mensagem() const;
-    void addSoftware(const string &);
+	void addSoftware(const string &);
+    void mostraId() const;
+        
     //void listarUsuarios() const;
     //void cadastrarUsuario(const string &, const int);
 	
@@ -29,12 +34,9 @@ public:
     
 private:
 
-    bool ligado;
-    int velocidade;
     int idFer;
     int quantSoftwares;
-    string cor;
-    string software;
+    const string software;
     string *softwareNomes;
     static int numeroFerraris;
     const static int VelocidadeMaxima;

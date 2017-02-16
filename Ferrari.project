@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="Ferrari" InternalType="Console">
+<CodeLite_Project Name="Ferrari" InternalType="Console" Version="10.0.0">
   <Description/>
   <Dependencies/>
   <Settings Type="Executable">
@@ -100,5 +100,9 @@
     <File Name="Data.cpp"/>
     <File Name="Motor.h"/>
     <File Name="Motor.cpp"/>
+    <File Name="Carro.h"/>
+    <File Name="Carro.cpp"/>
+    <File Name="Veiculo.h"/>
+    <File Name="Veiculo.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
