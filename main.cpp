@@ -2,14 +2,10 @@
 #include <iostream>
 #include <string>
 #include "Ferrari.h"
-#include "Ferrari.cpp"
 #include "Data.h"
-#include "Data.cpp"
 #include "Motor.h"
-#include "Motor.cpp"
 #include "Carro.h"
-#include "Carro.cpp"
-//#pragma once
+#include "Moto.h"
 using std::cout;
 using std::string;
 
@@ -23,13 +19,13 @@ int main(int velocidade, const string &mensagem, const string &cor){
     
     const Ferrari carro4("preta", "FTX4.1", 260, {3}, true);
     
-	cout << "Número de ferraris: " << Ferrari::n << '\n';
-    
-	//Usando a sobrecarga de operadores
-    Ferrari veiculo;
-    
+	cout << "Número de ferraris: " << Ferrari::numeroFerraris << '\n';
     cout << "Esse veículo tem velocidade, id e cor, respectivamente:\n";
     cout << carro1 << '\n';
+	
+	Veiculo *Derivada = new Carro();
+	delete Derivada;
+	Veiculo *Derivada = new Moto();
     
     return 0;
 }

@@ -104,5 +104,7 @@
     <File Name="Carro.cpp"/>
     <File Name="Veiculo.h"/>
     <File Name="Veiculo.cpp"/>
+    <File Name="Moto.h"/>
+    <File Name="Moto.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

@@ -1,12 +1,8 @@
 #include "Ferrari.h"
 #include "Data.h"
-#include "Data.cpp"
 #include "Motor.h"
-#include "Motor.cpp"
 #include "Carro.h"
-#include "Carro.cpp"
 #include "Veiculo.h"
-#include "Veiculo.cpp"
 #include <iostream>
 #include <string>
 using std::cout;
@@ -18,12 +14,14 @@ const int Ferrari::VelocidadeMaxima = 300;          //Const e static
 
 Ferrari::Ferrari(){                         		//Construtor vazio
     this->idFer = 0;
+	this->quantSoftwares = 0;
 	this->software = "";
     
     numeroFerraris++;
 }
 
-Ferrari::Ferrari(const Ferrari &p){       			//Construtor de cópia
+Ferrari::Ferrari(const Ferrari &p)
+:Carro(static_cast< Carro >(Carro)){       			//Construtor de cópia
     this->idFer = p.idFer;
 	this->quantSoftwares = p.quantSoftwares;
 	this->software = p.software;
@@ -32,8 +30,9 @@ Ferrari::Ferrari(const Ferrari &p){       			//Construtor de cópia
 	numeroFerraris++;
 }
 
-Ferrari::Ferrari(int, int, const string &){		//Construtor
-	this->idFer = idFer;
+Ferrari::Ferrari(int, int, const string &)
+:Carro(ligado, velocidade, cor, quantRodas, capacidade){		//Construtor
+	this->idFer[0] = idFer;
 	this->quantSoftwares;
 	this->software = software;
 		
@@ -47,34 +46,12 @@ Ferrari::~Ferrari(){                        		//Destrutor
 	numeroFerraris--;
 }
 
-ostream &operator << (ostream &output, const Ferrari &carro){       //sobrecarga de operadores <<
-    output 	<< static_cast< Carro > (carro)
-			<< " | Id: " << carro.idFer
-			<< " | Quantidade de Softwares: " <<carro.quantSoftwares
-			<< " | Software: " << carro.software << '\n';
-}
-
-const Ferrari &Ferrari::operator = (const Ferrari &carro){       //sobrecarga de operadores =
-    this->idFer = carro.idFer;
-    this->software = carro.software;
-	this->softwareNomes = carro.softwareNomes;
-    
-    return *this;
-}
-
 void Ferrari::mostraId() const{         //Array
     for (int i=0; i<sizeId; i++)
-        cout << id[i] << '\t';
+        cout << idFer[i] << '\t';
         
     cout << '\n';
 }
-
-/*void Ferrari::cadastrarUsuario(const string &usuario, const int index){
-    if (index >= 0 && index < quantUsuarios)
-        usuarioNomes[index] = usuario;
-    else
-        cout << "Erro!\n";
-}*/
 
 void Ferrari::addSoftware(const string &software){
     
@@ -91,4 +68,20 @@ void Ferrari::addSoftware(const string &software){
         softwareNomes[quantSoftwares-1] = software;
         
     delete [] aux;
+}
+
+ostream &operator << (ostream &output, const Ferrari &carro){       //sobrecarga de operadores <<
+    output 	<< static_cast< Carro > (carro)
+			<< " | Id: " << carro.idFer
+			<< " | Quantidade de Softwares: " <<carro.quantSoftwares
+			<< " | Software: " << carro.software << '\n';
+}
+
+const Ferrari &Ferrari::operator = (const Ferrari &carro){       //sobrecarga de operadores =
+    this->idFer = carro.idFer;
+    this->software = carro.software;
+	this->softwareNomes = carro.softwareNomes;
+    
+    static_cast< Carro >(*this) = static_cast< Carro > (carro);
+
 }

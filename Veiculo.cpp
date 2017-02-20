@@ -1,4 +1,11 @@
+#include <iostream>
+#include <string>
 #include "Veiculo.h"
+#pragma once
+using std::cout;
+using std::iostream;
+using std::string;
+
 
 Veiculo::Veiculo(){
 	this->velocidade = 0;
@@ -7,7 +14,7 @@ Veiculo::Veiculo(){
 	this->capacidade = 0;
 }
 
-Veiculo::Veiculo(Veiculo &v){
+Veiculo::Veiculo(const Veiculo &v){
 	this->velocidade = v.velocidade;
 	this->cor = v.cor;
 	this->quantRodas = v.quantRodas;
@@ -46,7 +53,7 @@ ostream &operator << (ostream &output, const Veiculo &veiculo){       //sobrecar
 			<< " | Capacidade: " << veiculo.capacidade << '\n';
 }
 
-const Carro &Carro::operator = (const Veiculo &veiculo){       //sobrecarga de operadores =
+const Veiculo &Veiculo::operator = (const Veiculo &veiculo){       //sobrecarga de operadores =
     this->velocidade = veiculo.velocidade;
 	this->cor = veiculo.cor;
 	this->quantRodas = veiculo.quantRodas;
@@ -54,3 +61,16 @@ const Carro &Carro::operator = (const Veiculo &veiculo){       //sobrecarga de o
     
     return *this;
 }   
+
+bool Veiculo::operator== (const Veiculo &veiculo) const{
+	if (this->velocidade == veiculo.velocidade)
+		return false;
+	if (this->cor == veiculo.cor)
+		return false;
+	if (this->quantRodas == veiculo.quantRodas)
+		return false;
+	if (this->capacidade == veiculo.capacidade)
+		return false;
+		
+	return true;
+}

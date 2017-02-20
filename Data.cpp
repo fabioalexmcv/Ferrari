@@ -48,3 +48,28 @@ int Data::checarDia(int dia) const{
     
     return 1;
 }
+
+ostream &operator<< (ostream &output, const Data &data){
+	output << data.dia << "/" << data.mes << "/" << data.ano << '\n';
+	return output;
+}
+
+
+bool Data::operator== (const Data &data) const{
+	if (this->dia == data.dia)
+		return false;
+	if (this->mes == data.mes)
+		return false;
+	if (this->ano == data.ano)
+		return false;
+	
+	return true;
+}
+
+const Data &Data::operator= (const Data &data){
+	this->dia = data.dia;
+	this->mes = data.mes;
+	this->ano = data.ano;
+	
+	return *this;
+}

@@ -3,17 +3,15 @@
 #include <string>
 #include <ostream>
 #include "Data.h"
-#include "Data.cpp"
 #include "Motor.h"
-#include "Motor.cpp"
 #include "Carro.h"
-#include "Carro.cpp"
 #include "Veiculo.h"
-#include "Veiculo.cpp"
 using std::string;
 using std::ostream;
 
 class Ferrari : public Carro{
+	
+	friend ostream &operator << (ostream &, const Ferrari &);        //Sobrecarga de operadores <<
     
 public:
 
@@ -25,24 +23,24 @@ public:
 	void addSoftware(const string &);
     void mostraId() const;
         
-    //void listarUsuarios() const;
-    //void cadastrarUsuario(const string &, const int);
-	
-	friend ostream &operator << (ostream &, const Ferrari &);        //Sobrecarga de operadores <<
-    
-    const Ferrari &operator = (const Ferrari &);         //Sobrecarga de operadores =
+    const Ferrari &operator = (const Ferrari &);        //Sobrecarga de operadores =
+	bool operator== (const Ferrari &) const;			//Sobrecarga de operadores ==
+	bool operator!= (const Ferrari &carro) const
+	{
+		return ! (*this == carro);
+	}
+
     
 private:
 
-    int idFer;
+    int idFer[sizeId];
     int quantSoftwares;
     const string software;
     string *softwareNomes;
     static int numeroFerraris;
     const static int VelocidadeMaxima;
     const static int sizeId = 10;
-    int id[sizeId];
-    
+        
     Motor *motor;
     
 };

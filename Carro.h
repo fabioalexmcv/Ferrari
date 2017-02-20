@@ -2,11 +2,10 @@
 #define CARRO_H
 #include <string>
 #include <ostream>
-#include "Ferrari.h"
 #include "Motor.h"
+#include "Data.h"
 #include "Veiculo.h"
 #include "Veiculo.cpp"
-
 using std::string;
 using std::ostream;
 
@@ -19,13 +18,19 @@ public:
 	Carro();
 	Carro(const Carro &);
 	Carro(bool);
-	~Carro();
+	virtual ~Carro();
 	
-	void mostrarVelocidade();
-	void ligarCarro();
+	void mostrarVelocidade() const;
+	void ligarCarro() const;
 	void mensagem() const;
 	
-	const Ferrari &operator = (const Ferrari &);
+	const Carro &operator = (const Carro &);
+	bool operator== (const Carro &) const;
+	bool operator!= (const Carro &carro) const
+	{
+		return ! (*this == carro);
+	}
+
 	
 private:
 

@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Fabio
-Date                   :=16/02/2017
+Date                   :=17/02/2017
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=clang++
 SharedObjectLinkerName :=clang++ -shared -fPIC
@@ -62,7 +62,7 @@ AS       := llvm-as
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ferrari.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Motor.cpp$(ObjectSuffix) $(IntermediateDirectory)/Carro.cpp$(ObjectSuffix) $(IntermediateDirectory)/Veiculo.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ferrari.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Motor.cpp$(ObjectSuffix) $(IntermediateDirectory)/Carro.cpp$(ObjectSuffix) $(IntermediateDirectory)/Veiculo.cpp$(ObjectSuffix) $(IntermediateDirectory)/Moto.cpp$(ObjectSuffix) 
 
 
 
@@ -122,6 +122,11 @@ $(IntermediateDirectory)/Veiculo.cpp$(ObjectSuffix): Veiculo.cpp
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Fabio/Documents/ProgII/Ferrari/Veiculo.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Veiculo.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Veiculo.cpp$(PreprocessSuffix): Veiculo.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Veiculo.cpp$(PreprocessSuffix) Veiculo.cpp
+
+$(IntermediateDirectory)/Moto.cpp$(ObjectSuffix): Moto.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Fabio/Documents/ProgII/Ferrari/Moto.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Moto.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Moto.cpp$(PreprocessSuffix): Moto.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Moto.cpp$(PreprocessSuffix) Moto.cpp
 
 ##
 ## Clean

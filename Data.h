@@ -3,7 +3,10 @@
 
 class Data{
 	
+	friend ostream &operator<<(ostream &, const Data &);
 public:
+	const Data &operator=(const Data &);
+	bool operator== (const Data &) const;
 
 	Data();
     Data(int=1, int=1, int=1900);
