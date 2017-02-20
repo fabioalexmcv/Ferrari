@@ -85,3 +85,12 @@ const Ferrari &Ferrari::operator = (const Ferrari &carro){       //sobrecarga de
     static_cast< Carro >(*this) = static_cast< Carro > (carro);
 
 }
+
+bool Ferrari::operator== (const Ferrari &carro) const{
+	if (this->ligado == carro.ligado)
+		return false;
+	if (static_cast< Carro >(*this) != static_cast< Carro > (carro))	
+		return false;
+			
+	return true;
+}
