@@ -24,7 +24,7 @@ Carro::~Carro(){
 }
 
 void Carro::mostrarVelocidade() const{
-    cout << "Velocidade:" << velocidade << '\n';
+    cout << "Velocidade:" << carro.velocidade << '\n';
 }
 
 void Carro::ligarCarro() const{

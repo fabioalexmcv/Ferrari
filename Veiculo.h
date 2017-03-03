@@ -18,6 +18,8 @@ public:
 	
 	void informarQuantRodas() const;
 	void informarCapacidade() const;
+	virtual void mostrarVelocidade() const;
+	void mostrarVelocidadeVeiculo(Veiculo *veiculo) const;
 	
 	const Veiculo &operator = (const Veiculo &);
 	bool operator== (const Veiculo &) const;

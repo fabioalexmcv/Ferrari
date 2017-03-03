@@ -29,7 +29,7 @@ Moto::~Moto(){
 }
 
 void Moto::mostrarVelocidade() const{
-    cout << "Velocidade:" << velocidade << '\n';
+    cout << "Velocidade:" << moto.velocidade << '\n';
 }
 
 void Moto::ligarMoto() const{

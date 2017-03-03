@@ -19,7 +19,7 @@ public:
 	Moto(bool, int);
 	virtual ~Moto();
 	
-	void mostrarVelocidade();
+	virtual void mostrarVelocidade();
 	void ligarMoto();
 	void mostrarRotacaoMotor();
 	

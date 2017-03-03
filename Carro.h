@@ -20,7 +20,7 @@ public:
 	Carro(bool);
 	virtual ~Carro();
 	
-	void mostrarVelocidade() const;
+	virtual void mostrarVelocidade() const;
 	void ligarCarro() const;
 	void mensagem() const;
 	

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Ferrari.h"
 #include "Data.h"
 #include "Motor.h"
@@ -8,6 +9,7 @@
 #include "Moto.h"
 using std::cout;
 using std::string;
+using std::vector;
 
 int main(int velocidade, const string &mensagem, const string &cor){
     
@@ -27,6 +29,30 @@ int main(int velocidade, const string &mensagem, const string &cor){
 	delete Derivada;
 	Veiculo *Derivada = new Moto();
     
+	//Polimorfismo
+	Carro carro;
+	Moto moto;
+	
+	mostrarVelocidadeVeiculo(&carro);
+	mostrarVelocidadeVeiculo(&moto);
+	
+	delete carro;
+	delete moto;
+	
+	//Um atributo do tipo vector< > em um das classes
+	vector <Veiculo*> veiculos(2);
+
+    veiculos[0] = new Carro(ligado);
+    veiculos[1] = new Moto(ligado, 30);
+	
+	//Usar o dynamic_cast uma da classe e fazer uma operação específica a essa classe
+    for (size_t i = 0; i < veiculos.size(); i++) {
+		Carro *derivedPtr = dynamic_cast<Carro*> (veiculos[i]);
+        if (derivedPtr != 0){
+			Veiculo.ligado(*derivedPtr, false);
+			cout << "O veículo está sendo desligado!\n";                         
+		}
+	}
     return 0;
 }
 

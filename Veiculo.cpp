@@ -43,7 +43,14 @@ void Veiculo::informarQuantRodas() const{
 
 void Veiculo::informarCapacidade() const{
 	cout << "Capacidade de pessoas: " << capacidade << '\n';
-	
+}
+
+void Veiculo::mostrarVelocidade() const{
+	cout << "Velocidade:" << 0 << '\n';
+}
+
+void Veiculo::mostrarVelocidadeVeiculo(Veiculo *veiculo) const{
+	veiculo->mostrarVelocidade();
 }
 
 ostream &operator << (ostream &output, const Veiculo &veiculo){       //sobrecarga de operadores <<
@@ -62,7 +69,7 @@ const Veiculo &Veiculo::operator = (const Veiculo &veiculo){       //sobrecarga 
     return *this;
 }   
 
-bool Veiculo::operator== (const Veiculo &veiculo) const{
+bool Veiculo::operator== (const Veiculo &veiculo) const{			//sobrecarga de operadores ==
 	if (this->velocidade == veiculo.velocidade)
 		return false;
 	if (this->cor == veiculo.cor)
