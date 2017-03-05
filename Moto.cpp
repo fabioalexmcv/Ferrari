@@ -9,7 +9,7 @@ using std::ostream;
 
 
 Moto::Moto(){
-	this->ligado = true;
+	this->ligado = false;
 	this->rotacaoMotor = 0;
 }
 
@@ -33,11 +33,12 @@ void Moto::mostrarVelocidade() const{
 }
 
 void Moto::ligarMoto() const{
-	cout << "Status: " << ligado << '\n';
+	cout << "A moto será ligada." << '\n';
+	this->ligado = true;
 }
 
 void Moto::mostrarRotacaoMotor() const{
-	cout << "Rotação: " << rotacaoMotor << '\n';
+	cout << "Rotação: " << moto.rotacaoMotor << '\n';
 }
 
 ostream &operator << (ostream &output, const Moto &moto){       //sobrecarga de operadores <<

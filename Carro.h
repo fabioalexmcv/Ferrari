@@ -17,10 +17,10 @@ public:
 
 	Carro();
 	Carro(const Carro &);
-	Carro(bool);
+	Carro(bool, float);
 	virtual ~Carro();
 	
-	virtual void mostrarVelocidade() const;
+	void mostrarVelocidade() const;
 	void ligarCarro() const;
 	void mensagem() const;
 	
@@ -35,6 +35,7 @@ public:
 private:
 
     bool ligado;
+	float tamanho;
 };
 
 #endif // CARRO_H

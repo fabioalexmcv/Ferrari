@@ -7,17 +7,20 @@ using std::iostream;
 using std::string;
 
 Carro::Carro(){
-	this->ligado = true;
+	this->ligado = false;
+	this->tamanho = 0;
 }
 
 Carro::Carro(const Carro &c)
 :Veiculo(static_cast< Veiculo >(Veiculo)){
 	this->ligado = c.ligado;
+	this->tamanho = c.tamanho;
 }
 
-Carro::Carro(bool)
+Carro::Carro(bool, const string &)
 :Veiculo(velocidade, cor, quantRodas, capacidade){
 	this->ligado = ligado;
+	this->tamanho = tamanho;
 }
 
 Carro::~Carro(){
@@ -28,26 +31,33 @@ void Carro::mostrarVelocidade() const{
 }
 
 void Carro::ligarCarro() const{
-	cout << "Status: " << ligado << '\n';
+	cout << "O carro será ligado." << '\n';
+	this->ligado = true;
 }
 
 void Carro::mensagem() const{
-    cout << "Meu carro está a " << velocidade << " km/h e sua cor é " << cor << '\n';
+    cout << "Meu carro está a " << carro.velocidade 
+		<< " km/h, sua cor é " << carro.cor 
+		<< " e seu tamanho " << carro.tamanho << '\n';
 }
 
 ostream &operator << (ostream &output, const Carro &carro){       //sobrecarga de operadores <<
     output 	<< static_cast< Veiculo > (veiculo)
-			<< " | Ligado: " << carro.ligado << '\n';
+			<< " | Ligado: " << carro.ligado 
+			<< " | Tamanho: " << carro.tamanho << '\n';
 }
 
 const Carro &Carro::operator = (const Carro &carro){       //sobrecarga de operadores =
     this->ligado = carro.ligado;
+	this->tamanho = carro.tamanho;
     
     static_cast< Veiculo >(*this) = static_cast< Veiculo > (carro);
 }
 
 bool Carro::operator== (const Carro &carro) const{
 	if (this->ligado == carro.ligado)
+		return false;
+	if (this->tamanho == carro.tamanho)
 		return false;
 	if (static_cast< Veiculo >(*this) != static_cast< Veiculo > (carro))	
 		return false;

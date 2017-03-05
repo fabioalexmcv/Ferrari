@@ -106,5 +106,7 @@
     <File Name="Veiculo.cpp"/>
     <File Name="Moto.h"/>
     <File Name="Moto.cpp"/>
+    <File Name="Onibus.h"/>
+    <File Name="Onibus.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

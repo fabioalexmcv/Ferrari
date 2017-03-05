@@ -7,6 +7,7 @@
 #include "Motor.h"
 #include "Carro.h"
 #include "Moto.h"
+#include "Onibus.h"
 using std::cout;
 using std::string;
 using std::vector;
@@ -50,7 +51,7 @@ int main(int velocidade, const string &mensagem, const string &cor){
 		Carro *derivedPtr = dynamic_cast<Carro*> (veiculos[i]);
         if (derivedPtr != 0){
 			Veiculo.ligado(*derivedPtr, false);
-			cout << "O veículo está sendo desligado!\n";                         
+			cout << "O veículo está sendo desligado!\n";                      
 		}
 	}
     return 0;
