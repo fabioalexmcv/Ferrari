@@ -28,6 +28,13 @@ Moto::Moto(bool, int)
 Moto::~Moto(){
 }
 
+void Moto::informarQuantRodas() const{
+	cout << "Quantidade de rodas: " << moto.quantRodas << '\n';
+}
+
+void Moto::informarCapacidade() const{
+	cout << "Capacidade de pessoas: " << moto.capacidade << '\n';
+
 void Moto::mostrarVelocidade() const{
     cout << "Velocidade:" << moto.velocidade << '\n';
 }
@@ -42,7 +49,7 @@ void Moto::mostrarRotacaoMotor() const{
 }
 
 ostream &operator << (ostream &output, const Moto &moto){       //sobrecarga de operadores <<
-    output 	<< static_cast< Veiculo > (veiculo)
+    output 	<< static_cast< Veiculo > (moto)
 			<< " | Ligado: " << moto.ligado 
 			<< " | Rotação: " << moto.rotacaoMotor << '\n';
 }
@@ -54,7 +61,7 @@ const Moto &Moto::operator = (const Moto &moto){       //sobrecarga de operadore
     static_cast< Veiculo >(*this) = static_cast< Veiculo > (moto);
 }
 
-bool Veiculo::operator== (const Veiculo &veiculo) const{
+bool Moto::operator== (const Moto &moto) const{
 	if (this->ligado == moto.ligado)
 		return false;
 	if (this->rotacaoMotor == moto.rotacaoMotor)

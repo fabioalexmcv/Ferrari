@@ -19,9 +19,11 @@ public:
 	Moto(bool, int);
 	virtual ~Moto();
 	
+	void informarQuantRodas() const;
+	void informarCapacidade() const;
 	void mostrarVelocidade();
-	void ligarMoto();
-	void mostrarRotacaoMotor();
+	void ligarMoto() const;
+	void mostrarRotacaoMotor() const;
 	
 	const Moto &operator = (const Moto &);
 	bool operator== (const Moto &) const;

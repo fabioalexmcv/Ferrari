@@ -1,5 +1,6 @@
 #ifndef MOTOR_H
 #define MOTOR_H
+#include"Data.h"
 
 class Motor
 {
@@ -10,6 +11,7 @@ public:
     
 private:
     float potencia;
+	Data dataFabricacao;	
 
 };
 

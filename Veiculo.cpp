@@ -38,15 +38,23 @@ Veiculo::~Veiculo(){
 }
 
 void Veiculo::informarQuantRodas() const{
-	cout << "Quantidade de rodas: " << quantRodas << '\n';
+	cout << "Quantidade de rodas: " << 0 << '\n';
 }
 
 void Veiculo::informarCapacidade() const{
-	cout << "Capacidade de pessoas: " << capacidade << '\n';
+	cout << "Capacidade de pessoas: " << 0 << '\n';
 }
 
 void Veiculo::mostrarVelocidade() const{
 	cout << "Velocidade:" << 0 << '\n';
+}
+
+void Veiculo::informarQuantRodasVeiculo(Veiculo *veiculo) const{
+	veiculo->informarQuantRodas();
+}
+
+void Veiculo::informarCapacidadeVeiculo(Veiculo *veiculo) const{
+	veiculo->informarCapacidade();
 }
 
 void Veiculo::mostrarVelocidadeVeiculo(Veiculo *veiculo) const{

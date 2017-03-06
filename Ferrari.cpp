@@ -70,26 +70,30 @@ void Ferrari::addSoftware(const string &software){
     delete [] aux;
 }
 
-ostream &operator << (ostream &output, const Ferrari &carro){       //sobrecarga de operadores <<
-    output 	<< static_cast< Carro > (carro)
-			<< " | Id: " << carro.idFer
-			<< " | Quantidade de Softwares: " <<carro.quantSoftwares
-			<< " | Software: " << carro.software << '\n';
+ostream &operator << (ostream &output, const Ferrari &ferrari){       //sobrecarga de operadores <<
+    output 	<< static_cast< Carro > (ferrari)
+			<< " | Id: " << ferrari.idFer
+			<< " | Quantidade de Softwares: " <<ferrari.quantSoftwares
+			<< " | Software: " << ferrari.software << '\n';
 }
 
-const Ferrari &Ferrari::operator = (const Ferrari &carro){       //sobrecarga de operadores =
-    this->idFer = carro.idFer;
-    this->software = carro.software;
-	this->softwareNomes = carro.softwareNomes;
+const Ferrari &Ferrari::operator = (const Ferrari &ferrari){       //sobrecarga de operadores =
+    this->idFer = ferrari.idFer;
+    this->software = ferrari.software;
+	this->softwareNomes = ferrari.softwareNomes;
     
-    static_cast< Carro >(*this) = static_cast< Carro > (carro);
+    static_cast< Carro >(*this) = static_cast< Carro > (ferrari);
 
 }
 
-bool Ferrari::operator== (const Ferrari &carro) const{
-	if (this->ligado == carro.ligado)
+bool Ferrari::operator== (const Ferrari &ferrari) const{
+	if (this->idFer == ferrari.idFer)
 		return false;
-	if (static_cast< Carro >(*this) != static_cast< Carro > (carro))	
+	if (this->software == ferrari.software)
+		return false;
+		if (this->softwareNomes == ferrari.softwareNomes)
+		return false;
+	if (static_cast< Carro >(*this) != static_cast< Carro > (ferrari))	
 		return false;
 			
 	return true;

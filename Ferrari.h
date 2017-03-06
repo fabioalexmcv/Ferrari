@@ -25,21 +25,21 @@ public:
         
     const Ferrari &operator = (const Ferrari &);        //Sobrecarga de operadores =
 	bool operator== (const Ferrari &) const;			//Sobrecarga de operadores ==
-	bool operator!= (const Ferrari &carro) const
+	bool operator!= (const Ferrari &ferrari) const
 	{
-		return ! (*this == carro);
+		return ! (*this == ferrari);
 	}
-
+    static int numeroFerraris;
     
 private:
-
-    int idFer[sizeId];
+	
+    int idFer[i];
     int quantSoftwares;
     const string software;
     string *softwareNomes;
-    static int numeroFerraris;
-    const static int VelocidadeMaxima;
-    const static int sizeId = 10;
+
+    static const int VelocidadeMaxima;
+    static const int sizeId = 10;
         
     Motor *motor;
     

@@ -1,5 +1,13 @@
 #ifndef DATA_H
 #define DATA_H
+#include <string>
+#include <ostream>
+#include "Motor.h"
+#include "Data.h"
+#include "Veiculo.h"
+#include "Veiculo.cpp"
+using std::string;
+using std::ostream;
 
 class Data{
 	

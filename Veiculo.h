@@ -16,9 +16,11 @@ public:
 	Veiculo(int, const string  &, int, int);
 	virtual ~Veiculo();
 	
-	void informarQuantRodas() const;
-	void informarCapacidade() const;
+	virtual void informarQuantRodas() const;
+	virtual void informarCapacidade() const;
 	virtual void mostrarVelocidade() const;
+	void informarQuantRodasVeiculo(Veiculo *veiculo) const;
+	void informarCapacidadeVeiculo(Veiculo *veiculo) const;
 	void mostrarVelocidadeVeiculo(Veiculo *veiculo) const;
 	
 	const Veiculo &operator = (const Veiculo &);

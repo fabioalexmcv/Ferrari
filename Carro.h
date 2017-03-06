@@ -20,6 +20,8 @@ public:
 	Carro(bool, float);
 	virtual ~Carro();
 	
+	void informarQuantRodas() const;
+	void informarCapacidade() const;
 	void mostrarVelocidade() const;
 	void ligarCarro() const;
 	void mensagem() const;

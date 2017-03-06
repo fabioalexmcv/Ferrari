@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Fabio
-Date                   :=17/02/2017
+Date                   :=06/03/2017
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=clang++
 SharedObjectLinkerName :=clang++ -shared -fPIC
@@ -62,7 +62,7 @@ AS       := llvm-as
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ferrari.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Motor.cpp$(ObjectSuffix) $(IntermediateDirectory)/Carro.cpp$(ObjectSuffix) $(IntermediateDirectory)/Veiculo.cpp$(ObjectSuffix) $(IntermediateDirectory)/Moto.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ferrari.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Motor.cpp$(ObjectSuffix) $(IntermediateDirectory)/Carro.cpp$(ObjectSuffix) $(IntermediateDirectory)/Veiculo.cpp$(ObjectSuffix) $(IntermediateDirectory)/Moto.cpp$(ObjectSuffix) $(IntermediateDirectory)/Onibus.cpp$(ObjectSuffix) 
 
 
 
@@ -127,6 +127,11 @@ $(IntermediateDirectory)/Moto.cpp$(ObjectSuffix): Moto.cpp
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Fabio/Documents/ProgII/Ferrari/Moto.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Moto.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Moto.cpp$(PreprocessSuffix): Moto.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Moto.cpp$(PreprocessSuffix) Moto.cpp
+
+$(IntermediateDirectory)/Onibus.cpp$(ObjectSuffix): Onibus.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Fabio/Documents/ProgII/Ferrari/Onibus.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Onibus.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Onibus.cpp$(PreprocessSuffix): Onibus.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Onibus.cpp$(PreprocessSuffix) Onibus.cpp
 
 ##
 ## Clean

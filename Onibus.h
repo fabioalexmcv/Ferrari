@@ -20,6 +20,8 @@ public:
 	Onibus(bool, const string &);
 	virtual ~Onibus();
 	
+	void informarQuantRodas() const;
+	void informarCapacidade() const;
 	void mostrarVelocidade() const;
 	void abrirPorta() const;
 	void mostrarLinha() const;

@@ -26,6 +26,13 @@ Carro::Carro(bool, const string &)
 Carro::~Carro(){
 }
 
+void Carro::informarQuantRodas() const{
+	cout << "Quantidade de rodas: " << carro.quantRodas << '\n';
+}
+
+void Carro::informarCapacidade() const{
+	cout << "Capacidade de pessoas: " << carro.capacidade << '\n';
+
 void Carro::mostrarVelocidade() const{
     cout << "Velocidade:" << carro.velocidade << '\n';
 }
@@ -42,7 +49,7 @@ void Carro::mensagem() const{
 }
 
 ostream &operator << (ostream &output, const Carro &carro){       //sobrecarga de operadores <<
-    output 	<< static_cast< Veiculo > (veiculo)
+    output 	<< static_cast< Veiculo > (carro)
 			<< " | Ligado: " << carro.ligado 
 			<< " | Tamanho: " << carro.tamanho << '\n';
 }
