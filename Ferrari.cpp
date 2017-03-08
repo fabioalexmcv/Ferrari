@@ -21,7 +21,7 @@ Ferrari::Ferrari(){                         		//Construtor vazio
 }
 
 Ferrari::Ferrari(const Ferrari &p)
-:Carro(static_cast< Carro >(Carro)){       			//Construtor de cópia
+:Carro(static_cast< Carro >(p)){       			//Construtor de cópia
     this->idFer = p.idFer;
 	this->quantSoftwares = p.quantSoftwares;
 	this->software = p.software;

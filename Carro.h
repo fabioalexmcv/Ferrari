@@ -17,7 +17,7 @@ public:
 
 	Carro();
 	Carro(const Carro &);
-	Carro(bool, float);
+	Carro(bool, const string &);
 	virtual ~Carro();
 	
 	void informarQuantRodas() const;
@@ -37,7 +37,7 @@ public:
 private:
 
     bool ligado;
-	float tamanho;
+	string tamanho;
 };
 
 #endif // CARRO_H

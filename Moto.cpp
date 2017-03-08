@@ -14,7 +14,7 @@ Moto::Moto(){
 }
 
 Moto::Moto(const Moto &m)
-:Veiculo(static_cast< Veiculo >(Veiculo)){
+:Veiculo(static_cast< Veiculo >(m)){
 	this->ligado = m.ligado;
 	this->rotacaoMotor = m.rotacaoMotor;
 }
@@ -29,14 +29,14 @@ Moto::~Moto(){
 }
 
 void Moto::informarQuantRodas() const{
-	cout << "Quantidade de rodas: " << moto.quantRodas << '\n';
+	cout << "Quantidade de rodas: " << quantRodas << '\n';
 }
 
 void Moto::informarCapacidade() const{
-	cout << "Capacidade de pessoas: " << moto.capacidade << '\n';
+	cout << "Capacidade de pessoas: " << capacidade << '\n';
 
 void Moto::mostrarVelocidade() const{
-    cout << "Velocidade:" << moto.velocidade << '\n';
+    cout << "Velocidade:" << velocidade << '\n';
 }
 
 void Moto::ligarMoto() const{
@@ -44,8 +44,12 @@ void Moto::ligarMoto() const{
 	this->ligado = true;
 }
 
-void Moto::mostrarRotacaoMotor() const{
-	cout << "Rotação: " << moto.rotacaoMotor << '\n';
+int Moto::mostrarRotacaoMotor(){  //get
+	return this->rotacaoMotor;
+}
+
+void Moto::aumentarGiro(int _rotacaoMotor){ //set
+	rotacaoMotor = _rotacaoMotor;
 }
 
 ostream &operator << (ostream &output, const Moto &moto){       //sobrecarga de operadores <<

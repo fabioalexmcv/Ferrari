@@ -36,7 +36,7 @@ Veiculo::Veiculo(int, const string &, int, int){
 
 Veiculo::~Veiculo(){
 }
-
+/*
 void Veiculo::informarQuantRodas() const{
 	cout << "Quantidade de rodas: " << 0 << '\n';
 }
@@ -59,7 +59,7 @@ void Veiculo::informarCapacidadeVeiculo(Veiculo *veiculo) const{
 
 void Veiculo::mostrarVelocidadeVeiculo(Veiculo *veiculo) const{
 	veiculo->mostrarVelocidade();
-}
+}*/
 
 ostream &operator << (ostream &output, const Veiculo &veiculo){       //sobrecarga de operadores <<
     output 	<< " Velocidade: " << veiculo.velocidade

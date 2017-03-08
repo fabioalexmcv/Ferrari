@@ -21,9 +21,10 @@ public:
 	
 	void informarQuantRodas() const;
 	void informarCapacidade() const;
-	void mostrarVelocidade();
+	void mostrarVelocidade() const;
 	void ligarMoto() const;
-	void mostrarRotacaoMotor() const;
+	int mostrarRotacaoMotor();
+	void aumentarGiro();
 	
 	const Moto &operator = (const Moto &);
 	bool operator== (const Moto &) const;

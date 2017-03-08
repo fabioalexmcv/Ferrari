@@ -16,12 +16,12 @@ public:
 	Veiculo(int, const string  &, int, int);
 	virtual ~Veiculo();
 	
-	virtual void informarQuantRodas() const;
-	virtual void informarCapacidade() const;
-	virtual void mostrarVelocidade() const;
-	void informarQuantRodasVeiculo(Veiculo *veiculo) const;
+	virtual void informarQuantRodas() const = 0;
+	virtual void informarCapacidade() const = 0;
+	virtual void mostrarVelocidade() const = 0;
+	/*void informarQuantRodasVeiculo(Veiculo *veiculo) const;
 	void informarCapacidadeVeiculo(Veiculo *veiculo) const;
-	void mostrarVelocidadeVeiculo(Veiculo *veiculo) const;
+	void mostrarVelocidadeVeiculo(Veiculo *veiculo) const;*/
 	
 	const Veiculo &operator = (const Veiculo &);
 	bool operator== (const Veiculo &) const;

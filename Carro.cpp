@@ -8,11 +8,11 @@ using std::string;
 
 Carro::Carro(){
 	this->ligado = false;
-	this->tamanho = 0;
+	this->tamanho = "";
 }
 
 Carro::Carro(const Carro &c)
-:Veiculo(static_cast< Veiculo >(Veiculo)){
+:Veiculo(static_cast< Veiculo >(c)){
 	this->ligado = c.ligado;
 	this->tamanho = c.tamanho;
 }
@@ -27,14 +27,14 @@ Carro::~Carro(){
 }
 
 void Carro::informarQuantRodas() const{
-	cout << "Quantidade de rodas: " << carro.quantRodas << '\n';
+	cout << "Quantidade de rodas: " << quantRodas << '\n';
 }
 
 void Carro::informarCapacidade() const{
-	cout << "Capacidade de pessoas: " << carro.capacidade << '\n';
+	cout << "Capacidade de pessoas: " << capacidade << '\n';
 
 void Carro::mostrarVelocidade() const{
-    cout << "Velocidade:" << carro.velocidade << '\n';
+    cout << "Velocidade:" << velocidade << '\n';
 }
 
 void Carro::ligarCarro() const{

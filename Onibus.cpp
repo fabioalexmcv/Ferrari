@@ -13,7 +13,7 @@ Onibus::Onibus(){
 }
 
 Onibus::Onibus(const Onibus &o)
-:Veiculo(static_cast< Veiculo >(Veiculo)){
+:Veiculo(static_cast< Veiculo >(o)){
 	this->aberto = o.aberto;
 	this->linha = o.linha;
 }
@@ -28,15 +28,15 @@ Onibus::~Onibus(){
 }
 
 void Onibus::informarQuantRodas() const{
-	cout << "Quantidade de rodas: " << onibus.quantRodas << '\n';
+	cout << "Quantidade de rodas: " << quantRodas << '\n';
 }
 
 void Onibus::informarCapacidade() const{
-	cout << "Capacidade de pessoas: " << onibus.capacidade << '\n';
+	cout << "Capacidade de pessoas: " << capacidade << '\n';
 }
 
 void Onibus::mostrarVelocidade() const{
-	cout << "Velocidade:" << onibus.velocidade << '\n';
+	cout << "Velocidade:" << velocidade << '\n';
 }
 
 void Onibus::abrirPorta() const{
