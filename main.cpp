@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <typeinfo>
 #include "Ferrari.h"
 #include "Data.h"
 #include "Motor.h"
@@ -14,27 +15,31 @@ using std::string;
 using std::vector;
 
 //Forma do slide polimorfismo
-void mostrarVelocidadeVeiculo(const Veiculo &);
+/*void mostrarVelocidadeVeiculo(const Veiculo &);
+void mostrarVelocidadeVeiculo(const Veiculo &p){
+	p.mostrarVelocidade();
+}*/
 
 int main(int argc, char **argv){
-    
-	void mostrarVelocidadeVeiculo(const Veiculo &p){
-		p.mostrarVelocidade();
-	}
 	
-	vector <Veiculo*> veiculos(3);
+    vector <Veiculo*> veiculos(3);
 
     Carro carro(false, "medio");
     Moto moto(false, 700);
     Onibus onibus(false,"A");
 	
-	mostrarVelocidadeVeiculo(carro);
-	mostrarVelocidadeVeiculo(moto);
-	mostrarVelocidadeVeiculo(onibus);
+	carro.mostrarVelocidade();
+	carro.informarCapacidade();
 	
-	delete carro;
+	moto.informarQuantRodas();
+	moto.mostrarRotacaoMotor();
+	
+	onibus.mostrarLinha();
+	onibus.informarCapacidade();
+	
+	/*delete carro;
 	delete moto;
-	delete onibus;
+	delete onibus;*/
 	
 	for (size_t i = 0; i < veiculos.size(); i++){
 		
@@ -48,7 +53,7 @@ int main(int argc, char **argv){
 	}
 	
 	for (size_t j = 0; j < veiculos.size(); j++){
-		cout << "deleting object of " << typeid(*veiculos[j]) << endl;
+		cout << "Deletando objetos... " << typeid(*veiculos[j]).name() << '\n';
 		delete veiculos[j];
     }
 	

@@ -20,11 +20,11 @@ public:
 	Onibus(bool, const string &);
 	virtual ~Onibus();
 	
-	void informarQuantRodas() const;
-	void informarCapacidade() const;
-	void mostrarVelocidade() const;
-	void abrirPorta() const;
-	void mostrarLinha() const;
+	void informarQuantRodas();
+	void informarCapacidade();
+	void mostrarVelocidade();
+	void abrirPorta();
+	void mostrarLinha();
 	
 	const Onibus &operator = (const Onibus &);
 	bool operator== (const Onibus &) const;

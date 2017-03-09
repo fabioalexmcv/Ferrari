@@ -10,10 +10,11 @@ using std::iostream;
 using std::string;
 
 int Ferrari::numeroFerraris = 0;            		//Static
-const int Ferrari::VelocidadeMaxima = 300;          //Const e static
+const int Ferrari::VelocidadeMaxima = 300;
+const int Ferrari::sizeId = 10;         //Const e static
 
 Ferrari::Ferrari(){                         		//Construtor vazio
-    this->idFer = 0;
+    this->idFer[0] = 0;
 	this->quantSoftwares = 0;
 	this->software = "";
     
@@ -22,7 +23,7 @@ Ferrari::Ferrari(){                         		//Construtor vazio
 
 Ferrari::Ferrari(const Ferrari &p)
 :Carro(static_cast< Carro >(p)){       			//Construtor de cópia
-    this->idFer = p.idFer;
+    this->idFer[0] = p.idFer[0];
 	this->quantSoftwares = p.quantSoftwares;
 	this->software = p.software;
 	
@@ -30,10 +31,10 @@ Ferrari::Ferrari(const Ferrari &p)
 	numeroFerraris++;
 }
 
-Ferrari::Ferrari(int, int, const string &)
-:Carro(ligado, velocidade, cor, quantRodas, capacidade){		//Construtor
-	this->idFer[0] = idFer;
-	this->quantSoftwares;
+Ferrari::Ferrari(int, int, const string &){
+//:Carro(ligado, velocidade, cor, quantRodas, capacidade){		//Construtor
+	this->idFer[0] = idFer[0];
+	this->quantSoftwares = quantSoftwares;
 	this->software = software;
 		
 	numeroFerraris++;
@@ -46,9 +47,9 @@ Ferrari::~Ferrari(){                        		//Destrutor
 	numeroFerraris--;
 }
 
-void Ferrari::mostraId() const{         //Array
+void Ferrari::mostraId(){         //Array
     for (int i=0; i<sizeId; i++)
-        cout << idFer[i] << '\t';
+        cout << this->idFer[i] << '\t';
         
     cout << '\n';
 }
@@ -78,16 +79,18 @@ ostream &operator << (ostream &output, const Ferrari &ferrari){       //sobrecar
 }
 
 const Ferrari &Ferrari::operator = (const Ferrari &ferrari){       //sobrecarga de operadores =
-    this->idFer = ferrari.idFer;
+    this->idFer[0] = ferrari.idFer[0];
+	this->quantSoftwares = ferrari.quantSoftwares;
     this->software = ferrari.software;
 	this->softwareNomes = ferrari.softwareNomes;
     
     static_cast< Carro >(*this) = static_cast< Carro > (ferrari);
-
 }
 
 bool Ferrari::operator== (const Ferrari &ferrari) const{
 	if (this->idFer == ferrari.idFer)
+		return false;
+	if (this->quantSoftwares == ferrari.quantSoftwares)
 		return false;
 	if (this->software == ferrari.software)
 		return false;
@@ -95,6 +98,6 @@ bool Ferrari::operator== (const Ferrari &ferrari) const{
 		return false;
 	if (static_cast< Carro >(*this) != static_cast< Carro > (ferrari))	
 		return false;
-			
+	
 	return true;
 }

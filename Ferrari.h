@@ -21,7 +21,7 @@ public:
     ~Ferrari();
 	
 	void addSoftware(const string &);
-    void mostraId() const;
+    void mostraId();
         
     const Ferrari &operator = (const Ferrari &);        //Sobrecarga de operadores =
 	bool operator== (const Ferrari &) const;			//Sobrecarga de operadores ==
@@ -31,17 +31,16 @@ public:
 	}
     static int numeroFerraris;
     
-private:
+protected:
 	
-    int idFer[i];
+	int idFer[];
     int quantSoftwares;
-    const string software;
+    string software;
     string *softwareNomes;
-
+	Motor *motor;
+	
     static const int VelocidadeMaxima;
-    static const int sizeId = 10;
-        
-    Motor *motor;
+    static const int sizeId;  
     
 };
 

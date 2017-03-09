@@ -11,7 +11,7 @@ public:
     
 private:
     float potencia;
-	Data dataFabricacao;	
+	//Data dataFabricacao;	
 
 };
 

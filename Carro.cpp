@@ -11,8 +11,8 @@ Carro::Carro(){
 	this->tamanho = "";
 }
 
-Carro::Carro(const Carro &c)
-:Veiculo(static_cast< Veiculo >(c)){
+Carro::Carro(const Carro &c){
+//:Veiculo(static_cast< Veiculo >(c)){
 	this->ligado = c.ligado;
 	this->tamanho = c.tamanho;
 }
@@ -26,30 +26,34 @@ Carro::Carro(bool, const string &)
 Carro::~Carro(){
 }
 
-void Carro::informarQuantRodas() const{
+void Carro::informarQuantRodas(){
+	quantRodas = 4;
 	cout << "Quantidade de rodas: " << quantRodas << '\n';
 }
 
-void Carro::informarCapacidade() const{
+void Carro::informarCapacidade(){
+	capacidade = 5;
 	cout << "Capacidade de pessoas: " << capacidade << '\n';
-
-void Carro::mostrarVelocidade() const{
-    cout << "Velocidade:" << velocidade << '\n';
 }
 
-void Carro::ligarCarro() const{
+void Carro::mostrarVelocidade(){
+    velocidade = 80;
+	cout << "Velocidade: " << velocidade << "Km/h.\n";
+}
+
+void Carro::ligarCarro(){
 	cout << "O carro será ligado." << '\n';
 	this->ligado = true;
 }
 
 void Carro::mensagem() const{
-    cout << "Meu carro está a " << carro.velocidade 
-		<< " km/h, sua cor é " << carro.cor 
-		<< " e seu tamanho " << carro.tamanho << '\n';
+    cout << "Meu carro está a " << this->velocidade 
+		<< " km/h, sua cor é " << this->cor 
+		<< " e seu tamanho " << this->tamanho << '\n';
 }
 
 ostream &operator << (ostream &output, const Carro &carro){       //sobrecarga de operadores <<
-    output 	<< static_cast< Veiculo > (carro)
+    output 	//<< static_cast< Veiculo > (carro)
 			<< " | Ligado: " << carro.ligado 
 			<< " | Tamanho: " << carro.tamanho << '\n';
 }
@@ -58,7 +62,7 @@ const Carro &Carro::operator = (const Carro &carro){       //sobrecarga de opera
     this->ligado = carro.ligado;
 	this->tamanho = carro.tamanho;
     
-    static_cast< Veiculo >(*this) = static_cast< Veiculo > (carro);
+    //static_cast< Veiculo >(*this) = static_cast< Veiculo > (carro);
 }
 
 bool Carro::operator== (const Carro &carro) const{
@@ -66,8 +70,8 @@ bool Carro::operator== (const Carro &carro) const{
 		return false;
 	if (this->tamanho == carro.tamanho)
 		return false;
-	if (static_cast< Veiculo >(*this) != static_cast< Veiculo > (carro))	
-		return false;
+	/*if (static_cast< Veiculo >(*this) != static_cast< Veiculo > (carro))	
+		return false;*/
 			
 	return true;
 }

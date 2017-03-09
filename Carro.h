@@ -20,10 +20,10 @@ public:
 	Carro(bool, const string &);
 	virtual ~Carro();
 	
-	void informarQuantRodas() const;
-	void informarCapacidade() const;
-	void mostrarVelocidade() const;
-	void ligarCarro() const;
+	void informarQuantRodas();
+	void informarCapacidade();
+	void mostrarVelocidade();
+	void ligarCarro();
 	void mensagem() const;
 	
 	const Carro &operator = (const Carro &);
@@ -34,7 +34,7 @@ public:
 	}
 
 	
-private:
+protected:
 
     bool ligado;
 	string tamanho;
