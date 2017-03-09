@@ -2,7 +2,6 @@
 #include <iostream>
 #include "Carro.h"
 #include "Veiculo.h"
-#include "Veiculo.cpp"
 using std::cout;
 using std::iostream;
 using std::string;
@@ -18,8 +17,8 @@ Onibus::Onibus(const Onibus &o){
 	this->linha = o.linha;
 }
 	
-Onibus::Onibus(bool, const string &)
-:Veiculo(velocidade, cor, quantRodas, capacidade){
+Onibus::Onibus(bool, const string &){
+//:Veiculo(velocidade, cor, quantRodas, capacidade){
 	this->aberto = aberto;
 	this->linha = linha;
 }

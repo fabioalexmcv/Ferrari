@@ -5,7 +5,6 @@
 #include "Motor.h"
 #include "Data.h"
 #include "Veiculo.h"
-#include "Veiculo.cpp"
 using std::string;
 using std::ostream;
 

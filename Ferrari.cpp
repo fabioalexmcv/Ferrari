@@ -2,7 +2,7 @@
 #include "Data.h"
 #include "Motor.h"
 #include "Carro.h"
-#include "Veiculo.h"
+//#include "Veiculo.h"
 #include <iostream>
 #include <string>
 using std::cout;

@@ -1,11 +1,12 @@
 #include <string>
-#include <ostream>
+#include <iostream>
 #include "Moto.h"
 #include "Motor.h"
 #include "Data.h"
 #include "Veiculo.h"
 using std::string;
-using std::ostream;
+using std::iostream;
+using std::cout;
 
 
 Moto::Moto(){
@@ -19,8 +20,8 @@ Moto::Moto(const Moto &m){
 	this->rotacaoMotor = m.rotacaoMotor;
 }
 
-Moto::Moto(bool, int)
-:Veiculo(velocidade, cor, quantRodas, capacidade){
+Moto::Moto(bool, int){
+//:Veiculo(velocidade, cor, quantRodas, capacidade){
 	this->ligado = ligado;
 	this->rotacaoMotor = rotacaoMotor;
 }

@@ -13,7 +13,7 @@ public:
 
 	Veiculo();
 	Veiculo(const Veiculo &);
-	Veiculo(int,const string &, int, int);
+	//Veiculo(int,const string &, int, int);
 	virtual ~Veiculo();
 	
 	virtual void informarQuantRodas() = 0;

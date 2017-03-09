@@ -1,7 +1,6 @@
 #include <iostream>
 #include "Carro.h"
 #include "Veiculo.h"
-#include "Veiculo.cpp"
 using std::cout;
 using std::iostream;
 using std::string;
@@ -17,8 +16,8 @@ Carro::Carro(const Carro &c){
 	this->tamanho = c.tamanho;
 }
 
-Carro::Carro(bool, const string &)
-:Veiculo(velocidade, cor, quantRodas, capacidade){
+Carro::Carro(bool, const string &){
+//:Veiculo(velocidade, cor, quantRodas, capacidade){
 	this->ligado = ligado;
 	this->tamanho = tamanho;
 }

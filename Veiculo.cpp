@@ -4,13 +4,15 @@
 #include "Carro.h"
 #include "Moto.h"
 #include "Onibus.h"
-#include "Data.h"
-#pragma once
-using std::cout;
+//#include "Data.h"
+//using std::cout;
+
 using std::iostream;
 using std::string;
 
-Veiculo::Veiculo(){
+Veiculo::Veiculo()
+//:velocidade(0), string(""), quantRodas(0), capacidade(0)
+{
 	this->velocidade = 0;
     this->cor = "";
 	this->quantRodas = 0;
@@ -23,7 +25,7 @@ Veiculo::Veiculo(const Veiculo &v){
 	this->quantRodas = v.quantRodas;
 	this->capacidade = v.capacidade;
 }
-
+/*
 Veiculo::Veiculo(int,const string &, int, int){
 	if (velocidade >= 0)
         this->velocidade = velocidade;
@@ -35,7 +37,7 @@ Veiculo::Veiculo(int,const string &, int, int){
 	else
 		this->quantRodas = 0;
 	this->capacidade = 0;
-}
+}*/
 
 Veiculo::~Veiculo(){
 }
