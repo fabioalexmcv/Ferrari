@@ -1,21 +1,15 @@
 #include <iostream>
 #include "Data.h"
-#pragma once
 using std::cout;
+using std::ostream;
 
-Data::Data(){
-	this->dia = 1; 
-    this->mes = 1;
-    this->ano = 1900;
+Data::Data (const Data &data){					//Construtor de cópia
+	this->dia = data.dia;
+    this->mes = data.mes;
+    this->ano = data.ano;
 }
 
-Data::Data (const Data &copia){
-	this->dia = copia.dia;
-    this->mes = copia.mes;
-    this->ano = copia.ano;
-}
-
-Data::Data(int d, int m, int a){
+Data::Data(int d, int m, int a){				//Construtor
     if (m > 0 && m <= 12)
         mes = m;
     
@@ -27,11 +21,11 @@ Data::Data(int d, int m, int a){
     dia = checarDia(d);
 }
 
-void Data::print() const{
-   cout << dia << '/' << mes << '/' << ano;
+Data::~Data(){									//Destrutor
 }
 
-Data::~Data(){
+void Data::print() const{
+   cout << dia << '/' << mes << '/' << ano;
 }
 
 int Data::checarDia(int dia) const{

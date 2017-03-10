@@ -1,8 +1,9 @@
-#include "Onibus.h"
 #include <iostream>
 #include <string>
+#include "Onibus.h"
 #include "Carro.h"
 #include "Veiculo.h"
+#include "Data.h"
 using std::cout;
 using std::iostream;
 using std::string;
@@ -18,8 +19,8 @@ Onibus::Onibus(const Onibus &onibus){							//Construtor de cópia
 	this->linha = onibus.linha;
 }
 	
-Onibus::Onibus(bool aberto, const string &linha)				//Construtor
-:Veiculo(velocidade, cor, quantRodas, capacidade){
+Onibus::Onibus(bool aberto, const string &linha, const Data &dataFab)				//Construtor
+:Veiculo(velocidade, cor, quantRodas, capacidade, dataFab){
 	this->aberto = aberto;
 	this->linha = linha;
 }

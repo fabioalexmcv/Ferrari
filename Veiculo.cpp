@@ -4,28 +4,29 @@
 #include "Carro.h"
 #include "Moto.h"
 #include "Onibus.h"
-//#include "Data.h"
+#include "Data.h"
 
 using std::iostream;
 using std::string;
 
-Veiculo::Veiculo()
-:velocidade(0), cor(""), quantRodas(0), capacidade(0)
-{
-	/*this->velocidade = 0;
+Veiculo::Veiculo()						//Construtor default
+:dataFab(){
+	this->velocidade = 0;
     this->cor = "";
 	this->quantRodas = 0;
-	this->capacidade = 0;*/
+	this->capacidade = 0;
 }
 
-Veiculo::Veiculo(const Veiculo &veiculo){
+Veiculo::Veiculo(const Veiculo &veiculo)			//Construtor de cópia
+:dataFab(veiculo.dataFab){
 	this->velocidade = veiculo.velocidade;
 	this->cor = veiculo.cor;
 	this->quantRodas = veiculo.quantRodas;
 	this->capacidade = veiculo.capacidade;
 }
 
-Veiculo::Veiculo(int velocidade, string &cor, int quantRodas, int capacidade){
+Veiculo::Veiculo(int velocidade, const string &cor, int quantRodas, int capacidade, const Data &data)	//Construtor
+:dataFab(data){
 	if (velocidade >= 0)
         this->velocidade = velocidade;
     else
@@ -44,18 +45,20 @@ Veiculo::Veiculo(int velocidade, string &cor, int quantRodas, int capacidade){
 		this->capacidade = 0;
 }
 
-Veiculo::~Veiculo(){
+Veiculo::~Veiculo(){					//Destrutor
 }
 
-/*ostream &operator << (ostream &output, const Veiculo &veiculo){       //sobrecarga de operadores <<
-    output 	<< " Velocidade: " << veiculo.velocidade
+ostream &operator << (ostream &output, const Veiculo &veiculo){       //sobrecarga de operadores <<
+    output 	<< "Data de fabricação: " << veiculo.dataFab
+			<< " | Velocidade: " << veiculo.velocidade
 			<< " | Cor: " << veiculo.cor 
 			<< " | Quantidade de rodas: " << veiculo.quantRodas
 			<< " | Capacidade: " << veiculo.capacidade << '\n';
 }
 
 const Veiculo &Veiculo::operator = (const Veiculo &veiculo){       //sobrecarga de operadores =
-    this->velocidade = veiculo.velocidade;
+	this->dataFab = veiculo.dataFab;
+	this->velocidade = veiculo.velocidade;
 	this->cor = veiculo.cor;
 	this->quantRodas = veiculo.quantRodas;
 	this->capacidade = veiculo.capacidade;
@@ -64,6 +67,8 @@ const Veiculo &Veiculo::operator = (const Veiculo &veiculo){       //sobrecarga 
 }   
 
 bool Veiculo::operator== (const Veiculo &veiculo) const{			//sobrecarga de operadores ==
+	if (this->dataFab == veiculo.dataFab)
+		return false;
 	if (this->velocidade == veiculo.velocidade)
 		return false;
 	if (this->cor == veiculo.cor)
@@ -74,4 +79,4 @@ bool Veiculo::operator== (const Veiculo &veiculo) const{			//sobrecarga de opera
 		return false;
 		
 	return true;
-}*/
+}

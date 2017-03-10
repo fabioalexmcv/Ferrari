@@ -10,10 +10,10 @@ using std::iostream;
 using std::string;
 
 int Ferrari::numeroFerraris = 0;            		//Static
-const int Ferrari::VelocidadeMaxima = 300;
-const int Ferrari::sizeId = 10;						//Const e static
+const int Ferrari::VelocidadeMaxima = 300;			//Static const
+const int Ferrari::sizeId = 10;						//Static const
 
-Ferrari::Ferrari(){                         		//Construtor vazio
+Ferrari::Ferrari(){                         		//Construtor default
     this->idFer = 0;
 	this->quantSoftwares = 0;
 	this->software = "";
@@ -22,7 +22,7 @@ Ferrari::Ferrari(){                         		//Construtor vazio
 }
 
 Ferrari::Ferrari(const Ferrari &p)
-:Carro(static_cast< Carro >(p)){       			//Construtor de cópia
+:Carro(static_cast< Carro >(p)){       				//Construtor de cópia
     this->idFer = p.idFer;
 	this->quantSoftwares = p.quantSoftwares;
 	this->software = p.software;
@@ -31,8 +31,8 @@ Ferrari::Ferrari(const Ferrari &p)
 	numeroFerraris++;
 }
 
-Ferrari::Ferrari(int ligado, int velocidade, int idFer, int quantSoftwares, const string &software)
-:Carro(ligado, velocidade){						//Construtor
+Ferrari::Ferrari(int ligado, const string &tamanho, int idFer, int quantSoftwares, const string &software)
+:Carro(ligado, tamanho){							//Construtor
 	this->idFer = idFer;
 	this->quantSoftwares = quantSoftwares;
 	this->software = software;

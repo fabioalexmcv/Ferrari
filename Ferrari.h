@@ -17,7 +17,7 @@ public:
 
     Ferrari();
     Ferrari(const Ferrari &);
-    Ferrari(int ligado, int velocidade, int idFer, int quantSoftwares, const string &software);
+    Ferrari(int ligado, const string &tamanho, int idFer, int quantSoftwares, const string &software);
     ~Ferrari();
 	
 	void addSoftware(const string &);
@@ -29,6 +29,7 @@ public:
 	{
 		return ! (*this == ferrari);
 	}
+
     static int numeroFerraris;
     
 protected:

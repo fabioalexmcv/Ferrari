@@ -16,7 +16,7 @@ public:
 
 	Carro();
 	Carro(const Carro &);
-	Carro(bool ligado, const string &tamanho);
+	Carro(bool ligado, const string &tamanho, const Data &);
 	virtual ~Carro();
 	
 	void informarQuantRodas();

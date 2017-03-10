@@ -15,12 +15,6 @@ using std::iostream;
 using std::string;
 using std::vector;
 
-//Forma do slide polimorfismo
-/*void mostrarVelocidadeVeiculo(const Veiculo &);
-void mostrarVelocidadeVeiculo(const Veiculo &p){
-	p.mostrarVelocidade();
-}*/
-
 int main(){
 	
     vector <Veiculo*> veiculos(3);
@@ -60,25 +54,3 @@ int main(){
 	
  	return 0;
 }
-
-
-	/*Forma do slide app
- 	Veiculo *derivedPtr = new Carro();
-	delete derivedPtr;
-	Veiculo *derivedPtr = new Moto();
-    delete derivedPtr;
-	Veiculo *derivedPtr = new Onibus();
-		
-	//Polimorfismo
-	Carro carro;
-	Moto moto;
-	Onibus onibus;
-	
-	vector <Veiculo*> veiculos(3);
-
-    veiculos[0] = new Carro(false, "medio");
-    veiculos[1] = new Moto(false, 700);
-    veiculos[2] = new Onibus(false,"A")
-	*/
-      
-

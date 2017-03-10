@@ -16,7 +16,7 @@ public:
 
 	Onibus();
 	Onibus(const Onibus &);
-	Onibus(bool aberto, const string &linha);
+	Onibus(bool aberto, const string &linha, const Data &);
 	virtual ~Onibus();
 	
 	void informarQuantRodas();

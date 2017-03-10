@@ -17,8 +17,8 @@ Carro::Carro(const Carro &carro){						//Construtor de cópia
 	this->tamanho = carro.tamanho;
 }
 
-Carro::Carro(bool ligado, const string &tamanho)		//Construtor
-:Veiculo(velocidade, cor, quantRodas, capacidade){
+Carro::Carro(bool ligado, const string &tamanho, const Data &dataFab)		//Construtor
+:Veiculo(velocidade, cor, quantRodas, capacidade, dataFab){
 	this->ligado = ligado;
 	this->tamanho = tamanho;
 }

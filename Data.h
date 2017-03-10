@@ -3,7 +3,6 @@
 #include <string>
 #include <ostream>
 #include "Motor.h"
-#include "Data.h"
 #include "Veiculo.h"
 using std::string;
 using std::ostream;
@@ -11,11 +10,16 @@ using std::ostream;
 class Data{
 	
 	friend ostream &operator<<(ostream &, const Data &);
+
 public:
+
 	const Data &operator=(const Data &);
 	bool operator== (const Data &) const;
+	bool operator!= (const Data &data) const
+	{
+		return !(*this == data);
+	}
 
-	Data();
     Data(int=1, int=1, int=1900);
 	Data(const Data &);
     ~Data();
