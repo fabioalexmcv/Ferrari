@@ -1,28 +1,29 @@
 #include <iostream>
+#include <string>
 #include "Carro.h"
 #include "Veiculo.h"
 using std::cout;
 using std::iostream;
 using std::string;
 
-Carro::Carro(){
+Carro::Carro(){											//Construtor default
 	this->ligado = false;
 	this->tamanho = "";
 }
 
-Carro::Carro(const Carro &c){
-//:Veiculo(static_cast< Veiculo >(c)){
-	this->ligado = c.ligado;
-	this->tamanho = c.tamanho;
+Carro::Carro(const Carro &carro){						//Construtor de cópia
+//:Veiculo(static_cast< Veiculo >(carro)){
+	this->ligado = carro.ligado;
+	this->tamanho = carro.tamanho;
 }
 
-Carro::Carro(bool, const string &){
-//:Veiculo(velocidade, cor, quantRodas, capacidade){
+Carro::Carro(bool ligado, const string &tamanho)		//Construtor
+:Veiculo(velocidade, cor, quantRodas, capacidade){
 	this->ligado = ligado;
 	this->tamanho = tamanho;
 }
 
-Carro::~Carro(){
+Carro::~Carro(){										//Destrutor
 }
 
 void Carro::informarQuantRodas(){
@@ -51,26 +52,21 @@ void Carro::mensagem() const{
 		<< " e seu tamanho " << this->tamanho << '\n';
 }
 
-ostream &operator << (ostream &output, const Carro &carro){       //sobrecarga de operadores <<
-    output 	//<< static_cast< Veiculo > (carro)
-			<< " | Ligado: " << carro.ligado 
+ostream &operator << (ostream &output, const Carro &carro){		//sobrecarga de operadores <<
+    output 	<< " | Ligado: " << carro.ligado 
 			<< " | Tamanho: " << carro.tamanho << '\n';
 }
 
-const Carro &Carro::operator = (const Carro &carro){       //sobrecarga de operadores =
+const Carro &Carro::operator = (const Carro &carro){			//sobrecarga de operadores =
     this->ligado = carro.ligado;
 	this->tamanho = carro.tamanho;
-    
-    //static_cast< Veiculo >(*this) = static_cast< Veiculo > (carro);
 }
 
-bool Carro::operator== (const Carro &carro) const{
+bool Carro::operator== (const Carro &carro) const{				//sobrecarga de operadores ==
 	if (this->ligado == carro.ligado)
 		return false;
 	if (this->tamanho == carro.tamanho)
 		return false;
-	/*if (static_cast< Veiculo >(*this) != static_cast< Veiculo > (carro))	
-		return false;*/
-			
+
 	return true;
 }

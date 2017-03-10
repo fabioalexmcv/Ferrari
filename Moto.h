@@ -16,7 +16,7 @@ public:
 
 	Moto();
 	Moto(const Moto &);
-	Moto(bool, int);
+	Moto(bool ligado, int rotacaoMotor);
 	virtual ~Moto();
 	
 	void informarQuantRodas();

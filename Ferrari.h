@@ -17,7 +17,7 @@ public:
 
     Ferrari();
     Ferrari(const Ferrari &);
-    Ferrari(int, int, const string &);
+    Ferrari(int ligado, int velocidade, int idFer, int quantSoftwares, const string &software);
     ~Ferrari();
 	
 	void addSoftware(const string &);
@@ -33,7 +33,7 @@ public:
     
 protected:
 	
-	int idFer[];
+	int idFer;
     int quantSoftwares;
     string software;
     string *softwareNomes;

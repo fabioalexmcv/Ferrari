@@ -11,10 +11,10 @@ using std::string;
 
 int Ferrari::numeroFerraris = 0;            		//Static
 const int Ferrari::VelocidadeMaxima = 300;
-const int Ferrari::sizeId = 10;         //Const e static
+const int Ferrari::sizeId = 10;						//Const e static
 
 Ferrari::Ferrari(){                         		//Construtor vazio
-    this->idFer[0] = 0;
+    this->idFer = 0;
 	this->quantSoftwares = 0;
 	this->software = "";
     
@@ -23,7 +23,7 @@ Ferrari::Ferrari(){                         		//Construtor vazio
 
 Ferrari::Ferrari(const Ferrari &p)
 :Carro(static_cast< Carro >(p)){       			//Construtor de cópia
-    this->idFer[0] = p.idFer[0];
+    this->idFer = p.idFer;
 	this->quantSoftwares = p.quantSoftwares;
 	this->software = p.software;
 	
@@ -31,9 +31,9 @@ Ferrari::Ferrari(const Ferrari &p)
 	numeroFerraris++;
 }
 
-Ferrari::Ferrari(int, int, const string &){
-//:Carro(ligado, velocidade, cor, quantRodas, capacidade){		//Construtor
-	this->idFer[0] = idFer[0];
+Ferrari::Ferrari(int ligado, int velocidade, int idFer, int quantSoftwares, const string &software)
+:Carro(ligado, velocidade){						//Construtor
+	this->idFer = idFer;
 	this->quantSoftwares = quantSoftwares;
 	this->software = software;
 		
@@ -79,7 +79,7 @@ ostream &operator << (ostream &output, const Ferrari &ferrari){       //sobrecar
 }
 
 const Ferrari &Ferrari::operator = (const Ferrari &ferrari){       //sobrecarga de operadores =
-    this->idFer[0] = ferrari.idFer[0];
+    this->idFer = ferrari.idFer;
 	this->quantSoftwares = ferrari.quantSoftwares;
     this->software = ferrari.software;
 	this->softwareNomes = ferrari.softwareNomes;

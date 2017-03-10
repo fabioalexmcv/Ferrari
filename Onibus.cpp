@@ -1,29 +1,30 @@
 #include "Onibus.h"
 #include <iostream>
+#include <string>
 #include "Carro.h"
 #include "Veiculo.h"
 using std::cout;
 using std::iostream;
 using std::string;
 
-Onibus::Onibus(){
+Onibus::Onibus(){												//Construtor default
 	this->aberto = false;
 	this->linha = "";
 }
 
-Onibus::Onibus(const Onibus &o){
-//:Veiculo(static_cast< Veiculo >(o)){
-	this->aberto = o.aberto;
-	this->linha = o.linha;
+Onibus::Onibus(const Onibus &onibus){							//Construtor de cópia
+//:Veiculo(static_cast< Veiculo >(onibus)){
+	this->aberto = onibus.aberto;
+	this->linha = onibus.linha;
 }
 	
-Onibus::Onibus(bool, const string &){
-//:Veiculo(velocidade, cor, quantRodas, capacidade){
+Onibus::Onibus(bool aberto, const string &linha)				//Construtor
+:Veiculo(velocidade, cor, quantRodas, capacidade){
 	this->aberto = aberto;
 	this->linha = linha;
 }
 
-Onibus::~Onibus(){
+Onibus::~Onibus(){												//Destrutor
 }
 
 void Onibus::informarQuantRodas(){
@@ -50,26 +51,21 @@ void Onibus::mostrarLinha(){
 	cout << "Esse ônibus é da linha: " << this->linha << '\n';
 }
 
-ostream &operator << (ostream &output, const Onibus &onibus){       //sobrecarga de operadores <<
-    output 	//<< static_cast< Veiculo > (onibus)
-			<< " | Aberto: " << onibus.aberto 
+ostream &operator << (ostream &output, const Onibus &onibus){	//sobrecarga de operadores <<
+    output 	<< " | Aberto: " << onibus.aberto 
 			<< " | Linha: " << onibus.linha << '\n';
 }
 
-const Onibus &Onibus::operator = (const Onibus &onibus){       //sobrecarga de operadores =
+const Onibus &Onibus::operator = (const Onibus &onibus){		//sobrecarga de operadores =
     this->aberto = onibus.aberto;
 	this->linha = onibus.linha;
-    
-    //static_cast< Veiculo >(*this) = static_cast< Veiculo > (onibus);
 }
 
-bool Onibus::operator== (const Onibus &onibus) const{
+bool Onibus::operator== (const Onibus &onibus) const{			//sobrecarga de operadores ==
 	if (this->aberto == onibus.aberto)
 		return false;
 	if (this->linha == onibus.linha)
 		return false;
-	/*if (static_cast< Veiculo >(*this) != static_cast< Veiculo > (onibus))	
-		return false;*/
 			
 	return true;
 }

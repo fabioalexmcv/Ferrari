@@ -21,7 +21,7 @@ void mostrarVelocidadeVeiculo(const Veiculo &p){
 	p.mostrarVelocidade();
 }*/
 
-int main(int argc, char **argv){
+int main(){
 	
     vector <Veiculo*> veiculos(3);
 
