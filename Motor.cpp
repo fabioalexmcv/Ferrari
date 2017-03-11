@@ -1,16 +1,18 @@
 #include "Motor.h"
 #include <iostream>
-#pragma once
 using std::cout;
 
-Motor::Motor(){
-    this->potencia = 0;
+Motor::Motor(float potencia){				//Construtor
+	this->potencia = potencia;
 }
 
-void Motor::mostrarPotencia() const{
-    cout << "A potência do motor é " << potencia <<'\n';
+Motor::Motor(const Motor &motor) {			//Construtor de cópia
+	this->potencia = motor.potencia;
 }
 
-Motor::~Motor(){
+Motor::~Motor(){							//Destrutor
 }
 
+float Motor::mostrarPotencia(){
+	return this->potencia;
+}

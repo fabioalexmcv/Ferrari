@@ -16,7 +16,7 @@ public:
 
 	Moto();
 	Moto(const Moto &);
-	Moto(bool ligado, int rotacaoMotor, const Data &);
+	Moto(bool ligado, int rotacaoMotor, const Data &, int quantAcessorios, const string &acessorio);
 	virtual ~Moto();
 	
 	void informarQuantRodas();
@@ -25,6 +25,7 @@ public:
 	void ligarMoto();
 	int mostrarRotacaoMotor();
 	void aumentarGiro(int);
+	void addAcessorio(const string &);
 	
 	const Moto &operator = (const Moto &);
 	bool operator== (const Moto &) const;
@@ -38,6 +39,9 @@ private:
 
     bool ligado;
 	int rotacaoMotor;
+	int quantAcessorios;
+	string acessorio;
+	string *acessorioNomes;
 
 };
 

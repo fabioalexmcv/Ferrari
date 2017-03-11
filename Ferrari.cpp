@@ -11,10 +11,10 @@ using std::string;
 
 int Ferrari::numeroFerraris = 0;            		//Static
 const int Ferrari::VelocidadeMaxima = 300;			//Static const
-const int Ferrari::sizeId = 10;						//Static const
+const int Ferrari::sizeId = 5;						//Static const
 
 Ferrari::Ferrari(){                         		//Construtor default
-    this->idFer = 0;
+    this->idFer = "";
 	this->quantSoftwares = 0;
 	this->software = "";
     
@@ -27,12 +27,11 @@ Ferrari::Ferrari(const Ferrari &p)
 	this->quantSoftwares = p.quantSoftwares;
 	this->software = p.software;
 	
-	
 	numeroFerraris++;
 }
 
-Ferrari::Ferrari(int ligado, const string &tamanho, int idFer, int quantSoftwares, const string &software)
-:Carro(ligado, tamanho){							//Construtor
+Ferrari::Ferrari(int ligado, const string &tamanho, const Data &dataFab, const string &idFer, int quantSoftwares, const string &software)
+:Carro(ligado, tamanho, dataFab){							//Construtor
 	this->idFer = idFer;
 	this->quantSoftwares = quantSoftwares;
 	this->software = software;
@@ -41,7 +40,7 @@ Ferrari::Ferrari(int ligado, const string &tamanho, int idFer, int quantSoftware
 }
 
 Ferrari::~Ferrari(){                        		//Destrutor
-    delete [] motor;
+	delete [] motor;
 	delete [] softwareNomes;
 	
 	numeroFerraris--;
@@ -54,7 +53,7 @@ void Ferrari::mostraId(){         //Array
     cout << '\n';
 }
 
-void Ferrari::addSoftware(const string &software){
+void Ferrari::addSoftwareFerrari(const string &software){					//Alocação dinâmica
     
     string *aux = new string[quantSoftwares];
     

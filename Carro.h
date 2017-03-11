@@ -16,7 +16,7 @@ public:
 
 	Carro();
 	Carro(const Carro &);
-	Carro(bool ligado, const string &tamanho, const Data &);
+	Carro(bool ligado, const string &tamanho, const Data &, int quantSoftwares, const string &software);
 	virtual ~Carro();
 	
 	void informarQuantRodas();
@@ -24,6 +24,7 @@ public:
 	void mostrarVelocidade();
 	void ligarCarro();
 	void mensagem() const;
+	void addSoftware(const string&);
 	
 	const Carro &operator = (const Carro &);
 	bool operator== (const Carro &) const;
@@ -37,6 +38,9 @@ protected:
 
     bool ligado;
 	string tamanho;
+	int quantSoftwares;
+	string software;
+	string *softwareNomes;
 };
 
 #endif // CARRO_H

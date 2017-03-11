@@ -17,10 +17,10 @@ public:
 
     Ferrari();
     Ferrari(const Ferrari &);
-    Ferrari(int ligado, const string &tamanho, int idFer, int quantSoftwares, const string &software);
+    Ferrari(int ligado, const string &tamanho, const Data &, const string &idFer, int quantSoftwares, const string &software);
     ~Ferrari();
 	
-	void addSoftware(const string &);
+	void addSoftwareFerrari(const string &);
     void mostraId();
         
     const Ferrari &operator = (const Ferrari &);        //Sobrecarga de operadores =
@@ -34,7 +34,7 @@ public:
     
 protected:
 	
-	int idFer;
+	string idFer;
     int quantSoftwares;
     string software;
     string *softwareNomes;

@@ -12,21 +12,28 @@ using std::cout;
 Moto::Moto(){													//Construtor default
 	this->ligado = false;
 	this->rotacaoMotor = 0;
+	this->quantAcessorios = 0;
+	this->acessorio = "";
 }
 
 Moto::Moto(const Moto &moto){									//Construtor de cópia
-//:Veiculo(static_cast< Veiculo >(moto)){
 	this->ligado = moto.ligado;
 	this->rotacaoMotor = moto.rotacaoMotor;
+	this->quantAcessorios = moto.quantAcessorios;
+	this->acessorio = moto.acessorio;
 }
 
-Moto::Moto(bool ligado, int rotacaoMotor, const Data &dataFab)						//Construtor
+Moto::Moto(bool ligado, int rotacaoMotor, const Data &dataFab, int quantAcessorios, const string &acessorio)						//Construtor
 :Veiculo(velocidade, cor, quantRodas, capacidade, dataFab){
 	this->ligado = ligado;
 	this->rotacaoMotor = rotacaoMotor;
+	this->quantAcessorios = quantAcessorios;
+	this->acessorio = acessorio;
+
 }
 
-Moto::~Moto(){													//Destrutor
+Moto::~Moto(){							//Destrutor
+	delete [] acessorioNomes;
 }
 
 void Moto::informarQuantRodas(){
@@ -57,20 +64,48 @@ void Moto::aumentarGiro(int _rotacaoMotor){						//set
 	rotacaoMotor = _rotacaoMotor;
 }
 
+void Moto::addAcessorio(const string &acessorio) {					//Alocação dinâmica
+
+	string *aux = new string[quantAcessorios];
+
+	for (int i = 0; i < quantAcessorios; i++)
+		aux[i] = acessorioNomes[i];
+
+	delete[] acessorioNomes;
+
+	acessorioNomes = new string[++quantAcessorios];
+
+	for (int i = 0; i < quantAcessorios - 1; i++)
+		acessorioNomes[quantAcessorios - 1] = acessorio;
+
+	delete[] aux;
+}
+
 ostream &operator << (ostream &output, const Moto &moto){       //sobrecarga de operadores <<
     output 	<< " | Ligado: " << moto.ligado 
-			<< " | Rotação: " << moto.rotacaoMotor << '\n';
+			<< " | Rotação: " << moto.rotacaoMotor
+			<< " | Quantidade de Acessórios: " << moto.quantAcessorios
+			<< " | Software: " << moto.acessorio << '\n';
 }
 
 const Moto &Moto::operator = (const Moto &moto){				//sobrecarga de operadores =
     this->ligado = moto.ligado;
 	this->rotacaoMotor = moto.rotacaoMotor;
+	this->quantAcessorios = moto.quantAcessorios;
+	this->acessorio = moto.acessorio;
+	this->acessorioNomes = moto.acessorioNomes;
 }
 
 bool Moto::operator== (const Moto &moto) const{					//sobrecarga de operadores ==
 	if (this->ligado == moto.ligado)
 		return false;
 	if (this->rotacaoMotor == moto.rotacaoMotor)
+		return false;
+	if (this->quantAcessorios == moto.quantAcessorios)
+		return false;
+	if (this->acessorio == moto.acessorio)
+		return false;
+	if (this->acessorioNomes == moto.acessorioNomes)
 		return false;
 
 	return true;

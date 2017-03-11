@@ -16,7 +16,7 @@ public:
 
 	Onibus();
 	Onibus(const Onibus &);
-	Onibus(bool aberto, const string &linha, const Data &);
+	Onibus(bool aberto, const string &linha, const Data &, int quantPassageiros, const string &passageiro);
 	virtual ~Onibus();
 	
 	void informarQuantRodas();
@@ -24,6 +24,7 @@ public:
 	void mostrarVelocidade();
 	void abrirPorta();
 	void mostrarLinha();
+	void addPassageiro(const string &);
 	
 	const Onibus &operator = (const Onibus &);
 	bool operator== (const Onibus &) const;
@@ -36,7 +37,9 @@ private:
 	
 	bool aberto;
 	string linha;
-
+	int quantPassageiros;
+	string passageiro;
+	string *passageiroNomes;
 
 };
 
