@@ -19,9 +19,9 @@ int main(){
 	
     vector <Veiculo*> veiculos(3);
 
-    Carro carro(false, "medio");
-    Moto moto(false, 700);
-    Onibus onibus(false,"A");
+    Carro carro(false, "medio", "02/08/2008", 4, "XT402", "Turbo 2.0");
+    Moto moto(false, 700, "11/02/2011", 1, "led", "Turbo 1.5" );
+    Onibus onibus(false,"A", "14/06/2000", 15, "João", "Turbo 1.6");
 	
 	carro.mostrarVelocidade();
 	carro.informarCapacidade();
@@ -32,10 +32,6 @@ int main(){
 	onibus.mostrarLinha();
 	onibus.informarCapacidade();
 	
-	/*delete carro;
-	delete moto;
-	delete onibus;*/
-	
 	for (size_t i = 0; i < veiculos.size(); i++){
 		
 		Moto *derivedPtr = dynamic_cast<Moto*> (veiculos[i]);
@@ -44,7 +40,7 @@ int main(){
 			cout << rotacaoMotor << '\n';
 			derivedPtr->aumentarGiro(10 * rotacaoMotor);
 			cout << "Rotacao: " << derivedPtr->mostrarRotacaoMotor() << '\n';                     
-		} //end if
+		} 
 	}
 	
 	for (size_t j = 0; j < veiculos.size(); j++){
