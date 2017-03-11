@@ -5,12 +5,13 @@
 #include "Moto.h"
 #include "Onibus.h"
 #include "Data.h"
+#include "Motor.h"
 
 using std::iostream;
 using std::string;
 
 Veiculo::Veiculo()						//Construtor default
-:dataFab(){
+:dataFab(), motor(){
 	this->velocidade = 0;
     this->cor = "";
 	this->quantRodas = 0;
@@ -18,15 +19,15 @@ Veiculo::Veiculo()						//Construtor default
 }
 
 Veiculo::Veiculo(const Veiculo &veiculo)			//Construtor de cópia
-:dataFab(veiculo.dataFab){
+:dataFab(veiculo.dataFab), motor(veiculo.motor){
 	this->velocidade = veiculo.velocidade;
 	this->cor = veiculo.cor;
 	this->quantRodas = veiculo.quantRodas;
 	this->capacidade = veiculo.capacidade;
 }
 
-Veiculo::Veiculo(int velocidade, const string &cor, int quantRodas, int capacidade, const Data &data)	//Construtor
-:dataFab(data){
+Veiculo::Veiculo(int velocidade, const string &cor, int quantRodas, int capacidade, const Data &data, const Motor &motors)	//Construtor
+:dataFab(data), motor(motors){
 	if (velocidade >= 0)
         this->velocidade = velocidade;
     else
@@ -49,7 +50,7 @@ Veiculo::~Veiculo(){					//Destrutor
 }
 
 ostream &operator << (ostream &output, const Veiculo &veiculo){       //sobrecarga de operadores <<
-    output 	<< "Data de fabricação: " << veiculo.dataFab
+    output 	<< " | Data de fabricação: " << veiculo.dataFab
 			<< " | Velocidade: " << veiculo.velocidade
 			<< " | Cor: " << veiculo.cor 
 			<< " | Quantidade de rodas: " << veiculo.quantRodas
@@ -62,7 +63,7 @@ const Veiculo &Veiculo::operator = (const Veiculo &veiculo){       //sobrecarga 
 	this->cor = veiculo.cor;
 	this->quantRodas = veiculo.quantRodas;
 	this->capacidade = veiculo.capacidade;
-    
+	    
     return *this;
 }   
 

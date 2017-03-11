@@ -23,8 +23,8 @@ Moto::Moto(const Moto &moto){									//Construtor de cópia
 	this->acessorio = moto.acessorio;
 }
 
-Moto::Moto(bool ligado, int rotacaoMotor, const Data &dataFab, int quantAcessorios, const string &acessorio)						//Construtor
-:Veiculo(velocidade, cor, quantRodas, capacidade, dataFab){
+Moto::Moto(bool ligado, int rotacaoMotor, const Data &dataFab, int quantAcessorios, const string &acessorio, const string &motor)						//Construtor
+:Veiculo(velocidade, cor, quantRodas, capacidade, dataFab, motor){
 	this->ligado = ligado;
 	this->rotacaoMotor = rotacaoMotor;
 	this->quantAcessorios = quantAcessorios;

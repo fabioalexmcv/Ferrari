@@ -38,8 +38,7 @@ protected:
     int quantSoftwares;
     string software;
     string *softwareNomes;
-	Motor *motor;
-	
+		
     static const int VelocidadeMaxima;
     static const int sizeId;  
     

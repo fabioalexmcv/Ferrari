@@ -3,6 +3,7 @@
 #include <ostream>
 #include <string>
 #include "Data.h"
+#include "Motor.h"
 using std::ostream;
 using std::string;
 
@@ -14,7 +15,7 @@ public:
 
 	Veiculo();
 	Veiculo(const Veiculo &);
-	Veiculo(int velocidade, const string &cor, int quantRodas, int capacidade, const Data &data);
+	Veiculo(int velocidade, const string &cor, int quantRodas, int capacidade, const Data &, const Motor &);
 	virtual ~Veiculo();
 	
 	//Métodos virtuais puros
@@ -38,7 +39,7 @@ protected:
 	int quantRodas;
 	int capacidade;
 	Data dataFab;
-	
+	Motor motor;
 };
 
 #endif // VEICULO_H

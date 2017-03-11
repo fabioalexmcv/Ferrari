@@ -23,11 +23,12 @@ public:
     Data(int=1, int=1, int=1900);
 	Data(const Data &);
     ~Data();
-    void print() const;
-	
-private:
 
-    int checarDia(int) const;
+    void print() const;
+	int checarDia(int) const;
+
+private:
+	    
     int dia;
     int mes;
     int ano;

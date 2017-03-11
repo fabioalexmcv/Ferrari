@@ -8,12 +8,14 @@
 class Motor
 {
 public:
+	Motor();
     Motor(float potencia);
 	Motor(const Motor &);
     virtual ~Motor();
-    float mostrarPotencia();
+
+    double mostrarPotencia();
     
-private:
+protected:
     float potencia;
 };
 

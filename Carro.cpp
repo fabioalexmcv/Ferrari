@@ -2,6 +2,7 @@
 #include <string>
 #include "Carro.h"
 #include "Veiculo.h"
+#include "Motor.h"
 using std::cout;
 using std::iostream;
 using std::string;
@@ -20,8 +21,8 @@ Carro::Carro(const Carro &carro){						//Construtor de cópia
 	this->software = carro.software;
 }
 
-Carro::Carro(bool ligado, const string &tamanho, const Data &dataFab, int quantSoftwares, const string &software)		//Construtor
-:Veiculo(velocidade, cor, quantRodas, capacidade, dataFab){
+Carro::Carro(bool ligado, const string &tamanho, const Data &dataFab, int quantSoftwares, const string &software, const string &motor)		//Construtor
+:Veiculo(velocidade, cor, quantRodas, capacidade, dataFab, motor){
 	this->ligado = ligado;
 	this->tamanho = tamanho;
 	this->quantSoftwares = quantSoftwares;

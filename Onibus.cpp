@@ -21,8 +21,8 @@ Onibus::Onibus(const Onibus &onibus){							//Construtor de cópia
 	this->passageiro = onibus.passageiro;
 }
 	
-Onibus::Onibus(bool aberto, const string &linha, const Data &dataFab, int quantPassageiros, const string &passageiro)				//Construtor
-:Veiculo(velocidade, cor, quantRodas, capacidade, dataFab){
+Onibus::Onibus(bool aberto, const string &linha, const Data &dataFab, int quantPassageiros, const string &passageiro, const string &motor)				//Construtor
+:Veiculo(velocidade, cor, quantRodas, capacidade, dataFab, motor){
 	this->aberto = aberto;
 	this->linha = linha;
 	this->quantPassageiros = quantPassageiros;
