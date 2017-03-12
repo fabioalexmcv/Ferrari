@@ -14,7 +14,7 @@ const int Ferrari::VelocidadeMaxima = 300;			//Static const
 const int Ferrari::sizeId = 5;						//Static const
 
 Ferrari::Ferrari(){                         		//Construtor default
-    this->idFer = "";
+	this->idFer = "";
 	this->quantSoftwares = 0;
 	this->software = "";
     
@@ -23,7 +23,7 @@ Ferrari::Ferrari(){                         		//Construtor default
 
 Ferrari::Ferrari(const Ferrari &p)
 :Carro(static_cast< Carro >(p)){       				//Construtor de cópia
-    this->idFer = p.idFer;
+   	this->idFer = p.idFer;
 	this->quantSoftwares = p.quantSoftwares;
 	this->software = p.software;
 	
@@ -47,43 +47,43 @@ Ferrari::~Ferrari(){                        		//Destrutor
 }
 
 void Ferrari::mostraId(){         //Array
-    for (int i=0; i<sizeId; i++)
+	for (int i=0; i<sizeId; i++)
         cout << this->idFer[i] << '\t';
         
-    cout << '\n';
+	cout << '\n';
 }
 
 void Ferrari::addSoftwareFerrari(const string &software){					//Alocação dinâmica
     
-    string *aux = new string[quantSoftwares];
+	string *aux = new string[quantSoftwares];
     
-    for (int i = 0; i < quantSoftwares; i++)
-        aux[i] = softwareNomes[i];
+	for (int i = 0; i < quantSoftwares; i++)
+    		aux[i] = softwareNomes[i];
         
-    delete [] softwareNomes;
+	delete [] softwareNomes;
     
-    softwareNomes = new string[++quantSoftwares];
+	softwareNomes = new string[++quantSoftwares];
     
-    for (int i = 0; i < quantSoftwares-1; i++)
-        softwareNomes[quantSoftwares-1] = software;
+	for (int i = 0; i < quantSoftwares-1; i++)
+        	softwareNomes[quantSoftwares-1] = software;
         
-    delete [] aux;
+	delete [] aux;
 }
 
 ostream &operator << (ostream &output, const Ferrari &ferrari){       //sobrecarga de operadores <<
-    output 	<< static_cast< Carro > (ferrari)
-			<< " | Id: " << ferrari.idFer
-			<< " | Quantidade de Softwares: " <<ferrari.quantSoftwares
-			<< " | Software: " << ferrari.software << '\n';
+	output 	<< static_cast< Carro > (ferrari)
+		<< " | Id: " << ferrari.idFer
+		<< " | Quantidade de Softwares: " <<ferrari.quantSoftwares
+		<< " | Software: " << ferrari.software << '\n';
 }
 
 const Ferrari &Ferrari::operator = (const Ferrari &ferrari){       //sobrecarga de operadores =
-    this->idFer = ferrari.idFer;
+	this->idFer = ferrari.idFer;
 	this->quantSoftwares = ferrari.quantSoftwares;
-    this->software = ferrari.software;
+	this->software = ferrari.software;
 	this->softwareNomes = ferrari.softwareNomes;
     
-    static_cast< Carro >(*this) = static_cast< Carro > (ferrari);
+	static_cast< Carro >(*this) = static_cast< Carro > (ferrari);
 }
 
 bool Ferrari::operator== (const Ferrari &ferrari) const{
