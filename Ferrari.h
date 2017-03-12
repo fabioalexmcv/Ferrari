@@ -20,21 +20,21 @@ public:
     Ferrari(int ligado, const string &tamanho, const Data &, const string &idFer, int quantSoftwares, const string &software);
     ~Ferrari();
 	
-	void addSoftwareFerrari(const string &);
+    void addSoftwareFerrari(const string &);
     void mostraId();
         
     const Ferrari &operator = (const Ferrari &);        //Sobrecarga de operadores =
-	bool operator== (const Ferrari &) const;			//Sobrecarga de operadores ==
-	bool operator!= (const Ferrari &ferrari) const
-	{
-		return ! (*this == ferrari);
-	}
+    bool operator== (const Ferrari &) const;			//Sobrecarga de operadores ==
+    bool operator!= (const Ferrari &ferrari) const
+    {
+        return ! (*this == ferrari);
+    }
 
     static int numeroFerraris;
     
 protected:
 	
-	string idFer;
+    string idFer;
     int quantSoftwares;
     string software;
     string *softwareNomes;
