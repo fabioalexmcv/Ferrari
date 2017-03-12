@@ -18,7 +18,7 @@ public:
 	Veiculo(int velocidade, const string &cor, int quantRodas, int capacidade, const Data &, const Motor &);
 	virtual ~Veiculo();
 	
-	//Métodos virtuais puros
+	//MÃ©todos virtuais puros
 	virtual void informarQuantRodas() = 0;
 	virtual void informarCapacidade() = 0;
 	virtual void mostrarVelocidade() = 0;
@@ -39,7 +39,7 @@ protected:
 	int quantRodas;
 	int capacidade;
 	Data dataFab;
-	Motor motor;
+	const Motor motor;
 };
 
 #endif // VEICULO_H
